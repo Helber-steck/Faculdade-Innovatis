@@ -17,11 +17,22 @@ export class LoginServiceService {
   login(usuario){
    
     
-    return this.http.post(AppConstants.baseLogin,JSON.stringify(usuario)).subscribe(data =>{
-
-      console.info(JSON.parse(JSON.stringify(data)));
-    })
     
-  }
+    const options = {
+      headers: { 'Content-Type': ['application/json'] }
+    };
+
+    return this.http.post(AppConstants.baseLogin,JSON.stringify(usuario),(options)).subscribe(data =>{
+
+       var token = JSON.parse(JSON.stringify(data)).token;
+
+       localStorage.setItem("token", token);
+        console.info(token)
+
+      });
+
+  
+  
+    }
           
-}
+  }
