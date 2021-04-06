@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+
+<div class="box-div">
+
+<mat-card>
+    <mat-card-title>Excluir</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Quantidade"
+                [value]="movimentacao.quantidade" name="quantidade" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Tipo"
+                [value]="movimentacao.name" name="name" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Data"
+                [value]="movimentacao.data" name="data" disabled>
+        </mat-form-field>
+
+       
+
+        <mat-form-field>
+            <input matInput placeholder="Id usuario"
+                [value]="movimentacao.idusuario" name="idusuario" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Id produto"
+                [value]="movimentacao.idproduto" name="idproduto" disabled>
+        </mat-form-field>
+        
+    </form>
+    <button mat-raised-button (click)="deletemovimentacao()" color="warn">
+        Excluir
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
+
+</div>

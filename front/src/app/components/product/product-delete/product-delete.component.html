@@ -1,0 +1,45 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+
+<div class="box-div">
+
+<mat-card>
+    <mat-card-title>Excluir</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome do produto"
+                [value]="product.name" name="name" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Status do produto (Ativo ou Desativado)"
+                [value]="product.status" name="status" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Quantidade"
+                [value]="product.quantidade" name="quantidade" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="ID fornecedor"
+                [value]="product.idfornecedor" name="idfornecedor" disabled>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="ID categoria"
+                [value]="product.idcategoria" name="idcategoria" disabled>
+        </mat-form-field>
+        
+    </form>
+    <button mat-raised-button (click)="deleteProduct()" color="warn">
+        Excluir
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
+
+</div>

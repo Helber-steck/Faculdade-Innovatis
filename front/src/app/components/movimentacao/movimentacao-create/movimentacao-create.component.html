@@ -1,0 +1,48 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+
+<div class="box-div">
+
+<mat-card>
+    <mat-card-title>Movimentação</mat-card-title>
+    <form>
+        
+        <mat-form-field>
+            <input matInput placeholder="Quantidade"
+                [(ngModel)]="movimentacao.quantidade" name="quantidade">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Tipo"
+                [(ngModel)]="movimentacao.name" name="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Data"
+                [(ngModel)]="movimentacao.data" name="data">
+        </mat-form-field>
+
+       
+
+        <mat-form-field>
+            <input matInput placeholder="Id usuario"
+                [(ngModel)]="movimentacao.idusuario" name="idusuario">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Id produto"
+                [(ngModel)]="movimentacao.idproduto" name="idproduto">
+        </mat-form-field>
+       
+    </form>
+    <button mat-raised-button (click)="createmovimentacao()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
+
+</div>
