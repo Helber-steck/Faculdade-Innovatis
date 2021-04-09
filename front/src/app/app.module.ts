@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpInterceptor, } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { HomeComponent } from './views/home/home.component';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatSnackBarModule } from  '@angular/material/snack-bar';
 import { HttpClientModule,} from  '@angular/common/http';
+
 
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -59,6 +62,8 @@ import { fornecedorUpdateComponent } from './components/fornecedor/fornecedor-up
 import { fornecedorDeleteComponent } from './components/fornecedor/fornecedor-delete/fornecedor-delete.component';
 
 import { LoginComponent } from './views/login/login.component';
+// import { from } from 'rxjs';
+import { TokenInterceptor } from './http-interceptors/token.interceptor';
 
  
 registerLocaleData(localePt);
@@ -121,10 +126,9 @@ registerLocaleData(localePt);
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [{
-    provide: LOCALE_ID,
-    useValue: 'pt-BR'
-  }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
