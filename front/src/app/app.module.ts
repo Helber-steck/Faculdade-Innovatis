@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatSnackBarModule } from  '@angular/material/snack-bar';
-import { HttpClientModule,} from  '@angular/common/http';
+ 
 
 
 import { FormsModule } from '@angular/forms';
@@ -62,8 +62,9 @@ import { fornecedorUpdateComponent } from './components/fornecedor/fornecedor-up
 import { fornecedorDeleteComponent } from './components/fornecedor/fornecedor-delete/fornecedor-delete.component';
 
 import { LoginComponent } from './views/login/login.component';
-// import { from } from 'rxjs';
+import { map } from "rxjs/operators"; 
 import { TokenInterceptor } from './http-interceptors/token.interceptor';
+ 
 
  
 registerLocaleData(localePt);

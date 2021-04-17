@@ -4,7 +4,9 @@ import { HttpClient } from "@angular/common/http";
 import { categoria } from "./categoria.model";
 import { categorialista } from "./categoria.model";
 import { Observable, EMPTY } from "rxjs";
-import { map, catchError } from "rxjs/operators";
+import { retry, map, catchError } from "rxjs/operators";
+
+ 
 
 @Injectable({
   providedIn: "root",
@@ -35,16 +37,26 @@ export class categoriaService {
     );
   }
 
-  read() {
+
+  read(): Observable<categoria[]> {
+    return this.http.get<categoria[]>(this.baseUrl)
+    .pipe(map(res => res)
     
-    return this.http.get<categorialista>(this.baseUrl).pipe(map((res: categorialista) => res.lista));
-    // read(): Observable<categoria[]> {
-    //   return this.http.get<categoria[]>(this.baseUrl).pipe(
-    //     map((obj) => obj),
-    //     catchError((e) => this.errorHandler(e))
-    //   );
-    // }
-  }
+    );
+    // return this.http.get<categorialista>(this.baseUrl).pipe(map((res: categorialista) => res.lista));
+  } 
+
+ 
+
+  // read() {
+  //   return this.http.get<categorialista>(this.baseUrl).pipe(map((res: categorialista) => res.lista));
+  //   // read(): Observable<categoria[]> {
+  //   //   return this.http.get<categoria[]>(this.baseUrl).pipe(
+  //   //     map((obj) => obj),
+  //   //     catchError((e) => this.errorHandler(e))
+  //   //   );
+  //   // }
+  // }
 
   
 
