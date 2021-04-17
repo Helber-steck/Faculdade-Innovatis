@@ -14,10 +14,16 @@ export class TokenInterceptor  implements HttpInterceptor {
       // Get the auth token from the service.
       const Token = localStorage.getItem('token'); 
       
+      let newRequest: HttpRequest<any> = request;
+      console.info(newRequest);
       // Clone the request and replace the original headers with
-    // cloned headers, updated with the authorization.
-      const newRequest = request.clone({
-        setHeaders: { 'Authorization': `Bearer ${Token}`}});
+      // cloned headers, updated with the authorization.
+      // const newRequest = request.clone({
+        // setHeaders: { Authorization: `Bearer ${Token}`}});
+
+        newRequest = request.clone({
+          headers: request.headers.set('Authorization', `Bearer ${Token}`)
+        });
 
         // headers: request.headers.set('Authorization','Bearer $(Token)')});
         console.info(newRequest);
@@ -26,4 +32,4 @@ export class TokenInterceptor  implements HttpInterceptor {
         return next.handle(newRequest);
 
     }
-    }
+}

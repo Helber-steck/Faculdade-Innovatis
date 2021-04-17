@@ -10,14 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class categoriaReadComponent implements OnInit {
 
   categorias: categoria[]
-  displayedColumns = ['id', 'name',  'action']
+  
+  displayedColumns = ['idcategoria', 'nome_categoria',  'action']
   
   constructor(private categoriaService: categoriaService) { }
 
   ngOnInit(): void {
     this.categoriaService.read().subscribe(categorias => {
       this.categorias = categorias
+
+      console.log(categorias)
     })
   }
+
+  
+
+  
+
+  
 
 }

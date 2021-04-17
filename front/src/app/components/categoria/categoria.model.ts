@@ -1,4 +1,8 @@
 export interface categoria {
-    id?: number
+    idcategoria?: number
     name: string
+}
+
+export interface categorialista {
+    lista: categoria[]
 }

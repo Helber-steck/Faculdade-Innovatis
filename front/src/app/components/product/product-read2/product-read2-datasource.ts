@@ -7,6 +7,12 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 const EXAMPLE_DATA: Product[] = [
   {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
+  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
+  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
+  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
+  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
+  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
+  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
 ];
 
 /**

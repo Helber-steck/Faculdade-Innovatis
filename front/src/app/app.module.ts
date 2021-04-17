@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { HTTP_INTERCEPTORS, HttpInterceptor, } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -127,7 +127,9 @@ registerLocaleData(localePt);
     MatSortModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+    // {provide: LOCALE_ID,   useClass: TokenInterceptor}
+
   ],
   bootstrap: [AppComponent]
 })
