@@ -2,9 +2,9 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient } from "@angular/common/http";
 import { categoria } from "./categoria.model";
-import { categorialista } from "./categoria.model";
 import { Observable, EMPTY } from "rxjs";
-import { retry, map, catchError } from "rxjs/operators";
+import { map, retry, catchError } from "rxjs/operators";
+
 
 @Injectable({
   providedIn: "root",
@@ -29,9 +29,10 @@ export class categoriaService {
     return this.http.get<categoria[]>(this.baseUrl)
       .pipe(
         map((res: any[]) => JSON.stringify(res)),
-        catchError(this.errorHandler)
-      );
+        retry(2),
+        catchError(this.errorHandler))
   }
+ 
    
   readById(idcategoria: number): Observable<categoria> {
     const url = `${this.baseUrl}/${idcategoria}`;
@@ -41,16 +42,16 @@ export class categoriaService {
     );
   }
 
-  create(categoria: categoria): Observable<categoria> {
-    return this.http.post<categoria>(this.baseUrl, categoria).pipe(
+  create(categorias: categoria): Observable<categoria> {
+    return this.http.post<categoria>(this.baseUrl, categorias).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  update(categoria: categoria): Observable<categoria> {
-    const url = `${this.baseUrl}/${categoria.idcategoria}`;
-    return this.http.put<categoria>(url, categoria).pipe(
+  update(categorias: categoria): Observable<categoria> {
+    const url = `${this.baseUrl}/${categorias.idcategoria}`;
+    return this.http.put<categoria>(url, categorias).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

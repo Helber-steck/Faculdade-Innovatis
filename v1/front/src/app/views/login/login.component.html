@@ -1,0 +1,17 @@
+<section class="bg-login">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 box">
+                <img src="assets/img/logo.png" style="margin: 0 auto; display: block;">
+            </div>
+            <div class="col-md-6 box-right">
+                <h1>Login</h1>
+                <p>Entre com seus dados corretamente para acessar o sistema.</p>
+                <input [(ngModel)] = "usuario.login" id="login" placeholder="Login">
+                <input [(ngModel)] = "usuario.senha" id="senha" placeholder="Senha">
+                <button type="button" class=" btn btn-primary"  (click)="login()"  routerLink="/home">Entrar</button>
+                   
+            </div>
+        </div>
+    </div>
+</section>

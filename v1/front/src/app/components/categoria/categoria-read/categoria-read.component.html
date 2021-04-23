@@ -3,26 +3,26 @@
     <table mat-table [dataSource]="categorias">
       <!-- Id Column -->
       <ng-container matColumnDef="idcategoria">
-        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <th id="exemplo-categoria" mat-header-cell *matHeaderCellDef>Id</th>
         <td mat-cell *matCellDef="let categorias">{{categorias.idcategoria}}</td>
       </ng-container>
   
       <!-- Name Column -->
       <ng-container matColumnDef="nome_categoria">
-        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <th id="exemplo-categoria" mat-header-cell *matHeaderCellDef>Nome</th>
         <td mat-cell *matCellDef="let categorias">{{categorias.nome_categoria}}</td>
       </ng-container>
 
       <!-- Action Column -->
       <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef>Ações</th>
-        <td mat-cell *matCellDef="let row">
-            <a routerLink="/categorias/update/{{ row.id }}" class="edit">
+        <th id="exemplo-categoria" mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let categorias">
+            <a routerLink="/categorias/update/{{ categorias.idcategoria }}" class="edit">
                 <i class="material-icons">
                     edit
                 </i>
             </a>
-            <a routerLink="/categorias/delete/{{ row.id }}" class="delete">
+            <a routerLink="/categorias/delete/{{ categorias.idcategoria }}" class="delete">
                 <i class="material-icons">
                     delete
                 </i>
@@ -31,16 +31,23 @@
       </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let categorias; columns: displayedColumns;"></tr>
     </table>
   </div>
 
   <br><br>
-  
- 
- 
- 
-      {{ categorias | json }} 
    
+  
+  <div *ngFor="let categoria of categorias | async">
+     teste {{categoria.idcategoria | async}}
+     teste: {{categoria.nome_categoria | async}}
+  </div>  
+ 
 
  
+ 
+    <!-- {{ categorias | json }}  -->
+    
+
+
+   
