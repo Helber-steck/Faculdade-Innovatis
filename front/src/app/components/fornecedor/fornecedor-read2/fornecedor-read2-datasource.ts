@@ -6,16 +6,7 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 const EXAMPLE_DATA: fornecedor[] = [
-  {id: 1, name: 'Hydrogen', cnpj: 9.99},
-  {id: 2, name: 'Helium', cnpj: 9.99},
-  {id: 3, name: 'Lithium', cnpj: 9.99},
-  {id: 4, name: 'Beryllium', cnpj: 9.99},
-  {id: 5, name: 'Boron', cnpj: 9.99},
-  {id: 6, name: 'Carbon', cnpj: 9.99},
-  {id: 7, name: 'Nitrogen', cnpj: 9.99},
-  {id: 8, name: 'Oxygen', cnpj: 9.99},
-  {id: 9, name: 'Fluorine', cnpj: 9.99},
-  {id: 10, name: 'Neon', cnpj: 9.99},
+  {idfornecedor: 1, razao_social: 'Hydrogen', cnpj: 9.99}
 ];
 
 /**
@@ -78,8 +69,8 @@ export class fornecedorRead2DataSource extends DataSource<fornecedor> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'razao_social': return compare(a.razao_social, b.razao_social, isAsc);
+        case 'idfornecedor': return compare(+a.idfornecedor, +b.idfornecedor, isAsc);
         default: return 0;
       }
     });

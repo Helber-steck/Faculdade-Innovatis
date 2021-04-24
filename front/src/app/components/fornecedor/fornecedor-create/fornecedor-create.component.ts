@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class fornecedorCreateComponent implements OnInit {
 
   fornecedor: fornecedor = {
-    name: '',
+    razao_social: '',
     cnpj: null
   }
 

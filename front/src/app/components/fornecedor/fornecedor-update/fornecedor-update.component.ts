@@ -18,8 +18,8 @@ export class fornecedorUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get("id");
-    this.fornecedorService.readById(id).subscribe((fornecedor) => {
+    const idfornecedor = +this.route.snapshot.paramMap.get("idfornecedor");
+    this.fornecedorService.readById(idfornecedor).subscribe((fornecedor) => {
       this.fornecedor = fornecedor;
     });
   }

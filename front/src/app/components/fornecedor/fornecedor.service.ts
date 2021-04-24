@@ -9,7 +9,8 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class fornecedorService {
-  baseUrl = "http://54.90.39.27:5000//fornecedores";
+  
+  baseUrl = "http://54.90.39.27:5000/fornecedores";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -36,8 +37,8 @@ export class fornecedorService {
     );
   }
 
-  readById(id: number): Observable<fornecedor> {
-    const url = `${this.baseUrl}/${id}`;
+  readById(idfornecedor: number): Observable<fornecedor> {
+    const url = `${this.baseUrl}/${idfornecedor}`;
     return this.http.get<fornecedor>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -45,15 +46,15 @@ export class fornecedorService {
   }
 
   update(fornecedor: fornecedor): Observable<fornecedor> {
-    const url = `${this.baseUrl}/${fornecedor.id}`;
+    const url = `${this.baseUrl}/${fornecedor.idfornecedor}`;
     return this.http.put<fornecedor>(url, fornecedor).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  delete(id: number): Observable<fornecedor> {
-    const url = `${this.baseUrl}/${id}`;
+  delete(idfornecedor: number): Observable<fornecedor> {
+    const url = `${this.baseUrl}/${idfornecedor}`;
     return this.http.delete<fornecedor>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class categoriaCreateComponent implements OnInit {
 
   categoria: categoria = {
-    name: ''
+    nome_categoria: ''
   }
 
   constructor(private categoriaService: categoriaService,

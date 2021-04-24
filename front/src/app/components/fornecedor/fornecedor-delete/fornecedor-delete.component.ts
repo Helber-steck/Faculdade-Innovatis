@@ -18,14 +18,14 @@ export class fornecedorDeleteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.fornecedorService.readById(id).subscribe((fornecedor) => {
+    const idfornecedor = +this.route.snapshot.paramMap.get('idfornecedor');
+    this.fornecedorService.readById(idfornecedor).subscribe((fornecedor) => {
       this.fornecedor = fornecedor;
     });
   }
 
   deletefornecedor(): void {
-    this.fornecedorService.delete(this.fornecedor.id).subscribe(() => {
+    this.fornecedorService.delete(this.fornecedor.idfornecedor).subscribe(() => {
       this.fornecedorService.showMessage("Excluido com sucesso!");
       this.router.navigate(["/fornecedors"]);
     });

@@ -4,29 +4,26 @@
 
 <div class="box-div">
 
-<mat-card>
-    <mat-card-title>Alterar</mat-card-title>
-    <form>
-
-   
-
-        <mat-form-field>
-            <input matInput placeholder="Nome"
-                [(ngModel)]="categoria.name" name="name">
-        </mat-form-field>
-
-        
- 
-        
-       
-    </form>
-    <button mat-raised-button (click)="updatecategoria()" color="primary">
-        Atualizar
-    </button>
+    <mat-card>
     
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-</mat-card>
+        <mat-card-title>Alterar</mat-card-title>
+        
+        <form>
+
+            <mat-form-field>
+                <input matInput placeholder="Nome" [(ngModel)]="categoria.nome_categoria" name="nome_categoria">
+            </mat-form-field>
+
+        </form>
+        
+        <button mat-raised-button (click)="updatecategoria()" color="primary">
+            Atualizar
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    
+    </mat-card>
 
 </div>

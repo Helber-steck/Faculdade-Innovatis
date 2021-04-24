@@ -2,9 +2,8 @@ import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient } from "@angular/common/http";
 import { categoria } from "./categoria.model";
-import { categorialista } from "./categoria.model";
 import { Observable, EMPTY } from "rxjs";
-import { retry, map, catchError } from "rxjs/operators";
+import {  map, catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root",
@@ -13,6 +12,8 @@ import { retry, map, catchError } from "rxjs/operators";
 export class categoriaService {
  
   baseUrl = "http://54.90.39.27:5000/categorias";
+
+
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -25,13 +26,16 @@ export class categoriaService {
     });
   }
 
+  
+  
+  
   read(): Observable<categoria[]> {
-    return this.http.get<categoria[]>(this.baseUrl)
-      .pipe(
-        map((res: any[]) => JSON.stringify(res)),
-        catchError(this.errorHandler)
-      );
+    return this.http.get<categoria[]>(this.baseUrl).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
+
    
   readById(idcategoria: number): Observable<categoria> {
     const url = `${this.baseUrl}/${idcategoria}`;

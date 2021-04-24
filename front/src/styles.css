@@ -23,8 +23,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .box-div{
-    margin-left: 231px; 
+    margin-left: 231px;
     width: calc(100% - 258px);
+    margin-top: 85px;
 }
 
 

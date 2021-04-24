@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 const EXAMPLE_DATA: categoria[] = [
-  {idcategoria: 1, name: 'Hydrogen', },
+  {idcategoria: 1, nome_categoria: 'Hydrogen', },
 ];
 
 /**
@@ -72,8 +72,8 @@ export class categoriaRead2DataSource extends DataSource<categoria> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.idcategoria, +b.idcategoria, isAsc);
+        case 'nome_categoria': return compare(a.nome_categoria, b.nome_categoria, isAsc);
+        case 'idcategoria': return compare(+a.idcategoria, +b.idcategoria, isAsc);
         default: return 0;
       }
     });

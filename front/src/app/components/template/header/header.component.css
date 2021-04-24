@@ -30,5 +30,7 @@
 }
 
 .mat-toolbar-row, .mat-toolbar-single-row {
-    height: 89px !important
+    height: 89px !important;
+    position: fixed;
+    z-index: 2;
 }

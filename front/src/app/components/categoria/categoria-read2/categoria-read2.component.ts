@@ -17,7 +17,7 @@ export class categoriaRead2Component implements AfterViewInit, OnInit {
   dataSource: categoriaRead2DataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id',  'name', ];
+  displayedColumns = ['idcategoria',  'nome_categoria', ];
 
   ngOnInit() {
     this.dataSource = new categoriaRead2DataSource();

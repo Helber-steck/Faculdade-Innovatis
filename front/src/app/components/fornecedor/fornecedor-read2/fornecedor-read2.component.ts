@@ -17,7 +17,7 @@ export class fornecedorRead2Component implements AfterViewInit, OnInit {
   dataSource: fornecedorRead2DataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'cnpj'];
+  displayedColumns = ['idfornecedor', 'razao_social', 'cnpj'];
 
   ngOnInit() {
     this.dataSource = new fornecedorRead2DataSource();
