@@ -20,13 +20,14 @@ export class categoriaCreateComponent implements OnInit {
   ngOnInit(): void {
     
   }
+ 
 
   createcategoria(): void {
-    this.categoriaService.create(this.categoria).subscribe(() => {
+    this.categoriaService.create(this.categoria).subscribe(data => {
+      console.log(data)
       this.categoriaService.showMessage('criado!')
       this.router.navigate(['/categorias'])
     })
-
   }
 
   cancel(): void {

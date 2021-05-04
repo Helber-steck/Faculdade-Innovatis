@@ -26,9 +26,6 @@ export class categoriaService {
     });
   }
 
-  
-  
-  
   read(): Observable<categoria[]> {
     return this.http.get<categoria[]>(this.baseUrl).pipe(
       map((obj) => obj),
@@ -36,7 +33,6 @@ export class categoriaService {
     );
   }
 
-   
   readById(idcategoria: number): Observable<categoria> {
     const url = `${this.baseUrl}/${idcategoria}`;
     return this.http.get<categoria>(url).pipe(
@@ -46,7 +42,7 @@ export class categoriaService {
   }
 
   create(categoria: categoria): Observable<categoria> {
-    return this.http.post<categoria>(this.baseUrl, categoria).pipe(
+    return this.http.post(`${this.baseUrl}/novo`, categoria).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
