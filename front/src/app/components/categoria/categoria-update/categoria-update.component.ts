@@ -9,7 +9,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./categoria-update.component.css"],
 })
 export class categoriaUpdateComponent implements OnInit {
-  categoria: categoria;
+  categoria: categoria = {
+    nome_categoria: ''
+  }
 
   constructor(
     private categoriaService: categoriaService,
@@ -18,7 +20,7 @@ export class categoriaUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get("id");
+    const id =+ this.route.snapshot.paramMap.get("id");
     this.categoriaService.readById(id).subscribe((categoria) => {
       this.categoria = categoria;
     });
