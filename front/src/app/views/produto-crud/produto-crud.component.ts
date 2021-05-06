@@ -3,25 +3,25 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-product-crud',
-  templateUrl: './product-crud.component.html',
-  styleUrls: ['./product-crud.component.css']
+  selector: 'app-produto-crud',
+  templateUrl: './produto-crud.component.html',
+  styleUrls: ['./produto-crud.component.css']
 })
-export class ProductCrudComponent implements OnInit {
+export class ProdutoCrudComponent implements OnInit {
 
   constructor(private router: Router, private headerService: HeaderService) {
     headerService.headerData = {
       title: 'Produtos',
       icon: '',
-      routeUrl: '/products'
+      routeUrl: '/produtos'
     }
   }
 
   ngOnInit(): void {
   }
 
-  navigateToProductCreate(): void {
-    this.router.navigate(['/products/create'])
+  navigateToProdutoCreate(): void {
+    this.router.navigate(['/produtos/create'])
   }
 
 }

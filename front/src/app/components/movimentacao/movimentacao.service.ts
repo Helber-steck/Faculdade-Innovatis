@@ -9,7 +9,9 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class movimentacaoService {
-  baseUrl = "http://localhost:3001/movimentacoes";
+  
+  baseUrl = "http://54.90.39.27:5000/movimentacoes";
+  baseUrl2 = "http://54.90.39.27:5000/movimentacao";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -23,7 +25,7 @@ export class movimentacaoService {
   }
 
   create(movimentacao: movimentacao): Observable<movimentacao> {
-    return this.http.post<movimentacao>(this.baseUrl, movimentacao).pipe(
+    return this.http.post(`${this.baseUrl}/novo`, movimentacao).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
@@ -36,8 +38,8 @@ export class movimentacaoService {
     );
   }
 
-  readById(id: number): Observable<movimentacao> {
-    const url = `${this.baseUrl}/${id}`;
+  readById(idmovimentacao: number): Observable<movimentacao> {
+    const url = `${this.baseUrl}/${idmovimentacao}`;
     return this.http.get<movimentacao>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
@@ -45,15 +47,15 @@ export class movimentacaoService {
   }
 
   update(movimentacao: movimentacao): Observable<movimentacao> {
-    const url = `${this.baseUrl}/${movimentacao.id}`;
+    const url = `${this.baseUrl2}/${movimentacao.idmovimentacao}`;
     return this.http.put<movimentacao>(url, movimentacao).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  delete(id: number): Observable<movimentacao> {
-    const url = `${this.baseUrl}/${id}`;
+  delete(idmovimentacao: number): Observable<movimentacao> {
+    const url = `${this.baseUrl}/${idmovimentacao}`;
     return this.http.delete<movimentacao>(url).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))

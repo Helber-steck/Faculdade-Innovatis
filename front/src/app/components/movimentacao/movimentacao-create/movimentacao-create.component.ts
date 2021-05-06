@@ -11,11 +11,14 @@ import { Router } from '@angular/router';
 export class movimentacaoCreateComponent implements OnInit {
 
   movimentacao: movimentacao = {
+    id_produto: null,
+    id_usuario: null,
+    idmovimentacao: null, //id
+    data_hora: null,
+    login_usuario: "",
+    nome_produto: "",
     quantidade: null,
-    name: '',
-    data: null,
-    idusuario: null,
-    idproduto: null,
+    tipo_movimentacao: "" //name
   }
 
   constructor(private movimentacaoService: movimentacaoService,

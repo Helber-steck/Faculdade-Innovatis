@@ -47,12 +47,12 @@ import { movimentacaoRead2Component } from './components/movimentacao/movimentac
 import { movimentacaoUpdateComponent } from './components/movimentacao/movimentacao-update/movimentacao-update.component';
 import { movimentacaoDeleteComponent } from './components/movimentacao/movimentacao-delete/movimentacao-delete.component';
 
-import { ProductCrudComponent } from './views/product-crud/product-crud.component';
-import { ProductCreateComponent } from './components/product/product-create/product-create.component';
-import { ProductReadComponent } from './components/product/product-read/product-read.component';
-import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
-import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
-import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
+import { ProdutoCrudComponent } from './views/produto-crud/produto-crud.component';
+import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
+import { ProdutoReadComponent } from './components/produto/produto-read/produto-read.component';
+import { ProdutoRead2Component } from './components/produto/produto-read2/produto-read2.component';
+import { ProdutoUpdateComponent } from './components/produto/produto-update/produto-update.component';
+import { ProdutoDeleteComponent } from './components/produto/produto-delete/produto-delete.component';
 
 import { fornecedorCrudComponent } from './views/fornecedor-crud/fornecedor-crud.component';
 import { fornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
@@ -95,12 +95,12 @@ registerLocaleData(localePt);
     movimentacaoUpdateComponent,
     movimentacaoDeleteComponent,
     
-    ProductCrudComponent,
-    ProductCreateComponent,
-    ProductReadComponent,
-    ProductRead2Component,
-    ProductUpdateComponent,
-    ProductDeleteComponent,
+    ProdutoCrudComponent,
+    ProdutoCreateComponent,
+    ProdutoReadComponent,
+    ProdutoRead2Component,
+    ProdutoUpdateComponent,
+    ProdutoDeleteComponent,
 
     fornecedorCrudComponent,
     fornecedorCreateComponent,

@@ -18,6 +18,7 @@ export class movimentacaoDeleteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // const id = +this.route.snapshot.paramMap.get('idmovimentacao');
     const id = +this.route.snapshot.paramMap.get('id');
     this.movimentacaoService.readById(id).subscribe((movimentacao) => {
       this.movimentacao = movimentacao;
@@ -25,7 +26,7 @@ export class movimentacaoDeleteComponent implements OnInit {
   }
 
   deletemovimentacao(): void {
-    this.movimentacaoService.delete(this.movimentacao.id).subscribe(() => {
+    this.movimentacaoService.delete(this.movimentacao.idmovimentacao).subscribe(() => {
       this.movimentacaoService.showMessage("Excluido com sucesso!");
       this.router.navigate(["/movimentacoes"]);
     });

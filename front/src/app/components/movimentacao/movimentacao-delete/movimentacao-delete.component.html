@@ -4,44 +4,51 @@
 
 <div class="box-div">
 
-<mat-card>
-    <mat-card-title>Excluir</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Quantidade"
-                [value]="movimentacao.quantidade" name="quantidade" disabled>
-        </mat-form-field>
+    <mat-card>
+        <mat-card-title>Excluir</mat-card-title>
+        <form>
 
-        <mat-form-field>
-            <input matInput placeholder="Tipo"
-                [value]="movimentacao.name" name="name" disabled>
-        </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="id_produto" [value]="movimentacao?.id_produto" name="id_produto" disabled>
+            </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Data"
-                [value]="movimentacao.data" name="data" disabled>
-        </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="id_usuario" [value]="movimentacao?.id_usuario" name="id_usuario" disabled>
+            </mat-form-field>
 
-       
+            <mat-form-field>
+                <input matInput placeholder="idmovimentacao" [value]="movimentacao?.idmovimentacao" name="idmovimentacao" disabled>
+            </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Id usuario"
-                [value]="movimentacao.idusuario" name="idusuario" disabled>
-        </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="data_hora" [value]="movimentacao?.data_hora" name="data_hora" disabled>
+            </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Id produto"
-                [value]="movimentacao.idproduto" name="idproduto" disabled>
-        </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="login_usuario" [value]="movimentacao?.login_usuario" name="login_usuario" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="nome_produto" [value]="movimentacao?.nome_produto" name="nome_produto" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="quantidade" [value]="movimentacao?.quantidade" name="quantidade" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="tipo_movimentacao" [value]="movimentacao?.tipo_movimentacao" name="tipo_movimentacao" disabled>
+            </mat-form-field>
+
+        </form>
         
-    </form>
-    <button mat-raised-button (click)="deletemovimentacao()" color="warn">
-        Excluir
-    </button>
-    
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-</mat-card>
+        <button mat-raised-button (click)="deletemovimentacao()" color="warn">
+            Excluir
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </mat-card>
 
 </div>

@@ -18,10 +18,10 @@ import { fornecedorUpdateComponent } from './components/fornecedor/fornecedor-up
 import { fornecedorCrudComponent } from "./views/fornecedor-crud/fornecedor-crud.component";
 import { fornecedorCreateComponent } from './components/fornecedor/fornecedor-create/fornecedor-create.component';
 
-import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
-import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
-import { ProductCrudComponent } from "./views/product-crud/product-crud.component";
-import { ProductCreateComponent } from './components/product/product-create/product-create.component';
+import { ProdutoDeleteComponent } from './components/produto/produto-delete/produto-delete.component';
+import { ProdutoUpdateComponent } from './components/produto/produto-update/produto-update.component';
+import { ProdutoCrudComponent } from "./views/produto-crud/produto-crud.component";
+import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
 
 import { LoginComponent } from './views/login/login.component';
 
@@ -73,20 +73,20 @@ const routes: Routes = [
 
 
   {
-    path: "products",
-    component: ProductCrudComponent
+    path: "produtos",
+    component: ProdutoCrudComponent
   },
   {
-    path: "products/create",
-    component: ProductCreateComponent
+    path: "produtos/create",
+    component: ProdutoCreateComponent
   },
   {
-    path: "products/update/:id",
-    component: ProductUpdateComponent
+    path: "produtos/update/:id",
+    component: ProdutoUpdateComponent
   },
   {
-    path: "products/delete/:id",
-    component: ProductDeleteComponent
+    path: "produtos/delete/:id",
+    component: ProdutoDeleteComponent
   },
 
   {

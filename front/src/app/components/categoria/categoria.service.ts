@@ -13,8 +13,6 @@ export class categoriaService {
  
   baseUrl = "http://54.90.39.27:5000/categorias";
 
-
-
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string, isError: boolean = false): void {
@@ -24,6 +22,13 @@ export class categoriaService {
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
     });
+  }
+
+  create(categoria: categoria): Observable<categoria> {
+    return this.http.post(`${this.baseUrl}/novo`, categoria).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
   read(): Observable<categoria[]> {
@@ -41,12 +46,7 @@ export class categoriaService {
     );
   }
 
-  create(categoria: categoria): Observable<categoria> {
-    return this.http.post(`${this.baseUrl}/novo`, categoria).pipe(
-      map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
-    );
-  }
+  
 
   update(categoria: categoria): Observable<categoria> {
     const url = `${this.baseUrl}/${categoria.idcategoria}`;

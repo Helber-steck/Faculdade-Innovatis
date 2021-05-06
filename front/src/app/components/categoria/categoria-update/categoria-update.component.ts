@@ -9,6 +9,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./categoria-update.component.css"],
 })
 export class categoriaUpdateComponent implements OnInit {
+  
   categoria: categoria = {
     nome_categoria: ''
   }

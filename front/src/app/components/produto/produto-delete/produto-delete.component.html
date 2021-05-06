@@ -5,38 +5,36 @@
 <div class="box-div">
 
 <mat-card>
-    <mat-card-title>Alterar</mat-card-title>
+    <mat-card-title>Excluir</mat-card-title>
     <form>
-
         <mat-form-field>
             <input matInput placeholder="Nome do produto"
-                [(ngModel)]="product.name" name="name">
+                [value]="produto?.name" name="name" disabled>
         </mat-form-field>
 
         <mat-form-field>
             <input matInput placeholder="Status do produto (Ativo ou Desativado)"
-                [(ngModel)]="product.status" name="status">
+                [value]="produto?.status" name="status" disabled>
         </mat-form-field>
 
         <mat-form-field>
             <input matInput placeholder="Quantidade"
-                [(ngModel)]="product.quantidade" name="quantidade">
+                [value]="produto?.quantidade" name="quantidade" disabled>
         </mat-form-field>
 
         <mat-form-field>
             <input matInput placeholder="ID fornecedor"
-                [(ngModel)]="product.idfornecedor" name="idfornecedor">
+                [value]="produto?.idfornecedor" name="idfornecedor" disabled>
         </mat-form-field>
 
         <mat-form-field>
             <input matInput placeholder="ID categoria"
-                [(ngModel)]="product.idcategoria" name="idcategoria">
+                [value]="produto?.idcategoria" name="idcategoria" disabled>
         </mat-form-field>
         
-       
     </form>
-    <button mat-raised-button (click)="updateProduct()" color="primary">
-        Atualizar
+    <button mat-raised-button (click)="deleteProduto()" color="warn">
+        Excluir
     </button>
     
     <button mat-raised-button (click)="cancel()">

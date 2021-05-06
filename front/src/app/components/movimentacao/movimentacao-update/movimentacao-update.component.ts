@@ -9,7 +9,18 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./movimentacao-update.component.css"],
 })
 export class movimentacaoUpdateComponent implements OnInit {
-  movimentacao: movimentacao;
+ 
+  // movimentacao: movimentacao
+  movimentacao: movimentacao = {
+    id_produto: null,
+    id_usuario: null,
+    idmovimentacao: null, //id
+    data_hora: null,
+    login_usuario: "",
+    nome_produto: "",
+    quantidade: null,
+    tipo_movimentacao: "" //name
+  }
 
   constructor(
     private movimentacaoService: movimentacaoService,
@@ -18,7 +29,7 @@ export class movimentacaoUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get("id");
+    const id =+ this.route.snapshot.paramMap.get("id");
     this.movimentacaoService.readById(id).subscribe((movimentacao) => {
       this.movimentacao = movimentacao;
     });
