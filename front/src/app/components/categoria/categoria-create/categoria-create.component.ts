@@ -14,14 +14,14 @@ export class categoriaCreateComponent implements OnInit {
     nome_categoria: ''
   }
 
-  constructor(private categoriaService: categoriaService,
-      private router: Router) { }
+  constructor(
+    private categoriaService: categoriaService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    
   }
  
-
   createcategoria(): void {
     this.categoriaService.create(this.categoria).subscribe(data => {
       console.log(data)

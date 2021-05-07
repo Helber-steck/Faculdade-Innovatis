@@ -39,13 +39,13 @@ export class ProdutoService {
             );
     }
 
-    readById(): Observable<Produto[]> {
-        return this.http.get<Produto[]>(this.baseUrl)
-            .pipe(
-                map((obj) => obj),
-                catchError((e) => this.errorHandler(e))
-            )
-    }
+    readById(idproduto: number): Observable<Produto> {
+        const url = `${this.baseUrl}/${idproduto}`;
+        return this.http.get<Produto>(url).pipe(
+          map((obj) => obj),
+          catchError((e) => this.errorHandler(e))
+        );
+      }
 
     update(produto: Produto): Observable<Produto> {
         const url = `${this.baseUrl}/${produto.idproduto}`;
@@ -62,6 +62,7 @@ export class ProdutoService {
             catchError((e) => this.errorHandler(e))
         );
     }
+    
 
     errorHandler(e: any): Observable<any> {
         this.showMessage('Ocorreu um erro', true);

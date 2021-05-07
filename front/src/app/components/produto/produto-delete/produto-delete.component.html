@@ -4,42 +4,43 @@
 
 <div class="box-div">
 
-<mat-card>
-    <mat-card-title>Excluir</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome do produto"
-                [value]="produto?.name" name="name" disabled>
-        </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="Status do produto (Ativo ou Desativado)"
-                [value]="produto?.status" name="status" disabled>
-        </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="Quantidade"
-                [value]="produto?.quantidade" name="quantidade" disabled>
-        </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="ID fornecedor"
-                [value]="produto?.idfornecedor" name="idfornecedor" disabled>
-        </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="ID categoria"
-                [value]="produto?.idcategoria" name="idcategoria" disabled>
-        </mat-form-field>
+    <mat-card>
+        <mat-card-title>Excluir</mat-card-title>
         
-    </form>
-    <button mat-raised-button (click)="deleteProduto()" color="warn">
-        Excluir
-    </button>
-    
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-</mat-card>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="id_categoria" [value]="produto?.id_categoria" name="id_categoria" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="id_fornecedor" [value]="produto?.id_fornecedor" name="id_fornecedor" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="idproduto" [value]="produto?.idproduto" name="idproduto" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="nome_produto" [value]="produto?.nome_produto" name="nome_produto" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="quantidade" [value]="produto?.quantidade" name="quantidade" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="status_produto" [value]="produto?.status_produto" name="status_produto" disabled>
+            </mat-form-field>
+        </form>
+
+        <button mat-raised-button (click)="deleteProduto()" color="warn">
+            Excluir
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+
+    </mat-card>
 
 </div>

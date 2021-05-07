@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProdutoReadComponent implements OnInit {
 
   produtos: Produto[]
+  
   displayedColumns = [
     'id_categoria', 
     'id_fornecedor', 

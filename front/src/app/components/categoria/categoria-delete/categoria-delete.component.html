@@ -7,19 +7,16 @@
     <mat-card>
         <mat-card-title>Excluir</mat-card-title>
         <form>
-    
+
             <mat-form-field>
-                <input matInput placeholder="Nome"
-                    [value]="categoria?.nome_categoria" name="nome_categoria" disabled>
+                <input matInput placeholder="Nome" [value]="categoria?.nome_categoria" name="nome_categoria" disabled>
             </mat-form-field>
 
-        
-            
         </form>
         <button mat-raised-button (click)="deletecategoria()" color="warn">
             Excluir
         </button>
-        
+
         <button mat-raised-button (click)="cancel()">
             Cancelar
         </button>

@@ -7,7 +7,7 @@ export interface movimentacao {
     // idproduto: number
     id_produto: number,
     id_usuario: number,
-    idmovimentacao: number, //id
+    idmovimentacao?: number, //id
     data_hora: number,
     login_usuario: "",
     nome_produto: "",

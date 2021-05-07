@@ -6,13 +6,7 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 const EXAMPLE_DATA: Produto[] = [
-  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
-  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
-  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
-  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
-  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
-  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
-  {id: 1, name: 'Hydrogen', status: 'ativo', quantidade: 5, idfornecedor: 5, idcategoria: 5},
+  {id_categoria: 0, id_fornecedor: 0, idproduto: 0, nome_produto: "", quantidade: 0, status_produto: "",},
 ];
 
 /**
@@ -24,6 +18,8 @@ export class ProdutoRead2DataSource extends DataSource<Produto> {
   data: Produto[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
+
+  row:"";
 
   constructor() {
     super();
@@ -75,8 +71,8 @@ export class ProdutoRead2DataSource extends DataSource<Produto> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'nome_produto': return compare(a.nome_produto, b.nome_produto, isAsc);
+        case 'idproduto': return compare(+a.idproduto, +b.idproduto, isAsc);
         default: return 0;
       }
     });

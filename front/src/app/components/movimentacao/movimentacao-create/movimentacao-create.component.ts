@@ -21,19 +21,21 @@ export class movimentacaoCreateComponent implements OnInit {
     tipo_movimentacao: "" //name
   }
 
-  constructor(private movimentacaoService: movimentacaoService,
-      private router: Router) { }
+  constructor(
+    private movimentacaoService: movimentacaoService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    
   }
-
+ 
   createmovimentacao(): void {
-    this.movimentacaoService.create(this.movimentacao).subscribe(() => {
+    this.movimentacaoService.create(this.movimentacao).subscribe(data => {
+      console.log("tester")
+      console.log(data)
       this.movimentacaoService.showMessage('criado!')
       this.router.navigate(['/movimentacoes'])
     })
-
   }
 
   cancel(): void {

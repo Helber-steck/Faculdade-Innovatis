@@ -5,36 +5,37 @@
 <div class="box-div">
 
 <mat-card>
+
     <mat-card-title>Alterar</mat-card-title>
+    
     <form>
 
         <mat-form-field>
-            <input matInput placeholder="Nome do produto"
-                [(ngModel)]="produto.name" name="name">
+            <input matInput placeholder="id_categoria" [(ngModel)]="produto.id_categoria" name="id_categoria">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Status do produto (Ativo ou Desativado)"
-                [(ngModel)]="produto.status" name="status">
+            <input matInput placeholder="id_fornecedor" [(ngModel)]="produto.id_fornecedor" name="id_fornecedor">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Quantidade"
-                [(ngModel)]="produto.quantidade" name="quantidade">
+            <input matInput placeholder="idproduto" [(ngModel)]="produto.idproduto" name="idproduto">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="ID fornecedor"
-                [(ngModel)]="produto.idfornecedor" name="idfornecedor">
+            <input matInput placeholder="nome_produto" [(ngModel)]="produto.nome_produto" name="nome_produto">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="ID categoria"
-                [(ngModel)]="produto.idcategoria" name="idcategoria">
+            <input matInput placeholder="quantidade" [(ngModel)]="produto.quantidade" name="quantidade">
         </mat-form-field>
-        
+
+        <mat-form-field>
+            <input matInput placeholder="status_produto" [(ngModel)]="produto.status_produto" name="status_produto">
+        </mat-form-field>
        
     </form>
+
     <button mat-raised-button (click)="updateProduto()" color="primary">
         Atualizar
     </button>

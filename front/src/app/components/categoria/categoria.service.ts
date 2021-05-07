@@ -3,7 +3,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient } from "@angular/common/http";
 import { categoria } from "./categoria.model";
 import { Observable, EMPTY } from "rxjs";
-import {  map, catchError } from "rxjs/operators";
+import { map, catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root",
@@ -45,8 +45,6 @@ export class categoriaService {
       catchError((e) => this.errorHandler(e))
     );
   }
-
-  
 
   update(categoria: categoria): Observable<categoria> {
     const url = `${this.baseUrl}/${categoria.idcategoria}`;

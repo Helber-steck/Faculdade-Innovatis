@@ -11,7 +11,7 @@ export class movimentacaoReadComponent implements OnInit {
 
   movimentacoes: movimentacao[]
   
-  displayedColumns = ['id_produto', 'id_usuario', 'idmovimentacao', 'data_hora',  'login_usuario', 'nome_produto', 'quantidade', 'tipo_movimentacao', 'action']
+  displayedColumns = ['id_produto', 'id_usuario', 'idmovimentacao', 'data_hora',  'login_usuario', 'nome_produto', 'quantidade', 'tipo_movimentacao', /*'action'*/]
   
   constructor(private movimentacaoService: movimentacaoService) { }
 
