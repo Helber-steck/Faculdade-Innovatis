@@ -12,13 +12,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 
-import { MatSidenavModule } from  '@angular/material/sidenav';
-import { MatCardModule } from  '@angular/material/card';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
-import { MatButtonModule } from  '@angular/material/button';
-import { MatSnackBarModule } from  '@angular/material/snack-bar';
- 
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 import { FormsModule } from '@angular/forms';
@@ -30,7 +30,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { RedDirective } from './directives/red.directive';
 
 import localePt from '@angular/common/locales/pt';
-import { registerLocaleData } from  '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import { ForDirective } from './directives/for.directive';
 
 import { categoriaCrudComponent } from './views/categoria-crud/categoria-crud.component';
@@ -62,11 +62,11 @@ import { fornecedorUpdateComponent } from './components/fornecedor/fornecedor-up
 import { fornecedorDeleteComponent } from './components/fornecedor/fornecedor-delete/fornecedor-delete.component';
 
 import { LoginComponent } from './views/login/login.component';
-import { map } from "rxjs/operators"; 
+import { map } from "rxjs/operators";
 import { TokenInterceptor } from './http-interceptors/token.interceptor';
- 
 
- 
+
+
 registerLocaleData(localePt);
 
 @NgModule({
@@ -94,7 +94,7 @@ registerLocaleData(localePt);
     movimentacaoRead2Component,
     movimentacaoUpdateComponent,
     movimentacaoDeleteComponent,
-    
+
     ProdutoCrudComponent,
     ProdutoCreateComponent,
     ProdutoReadComponent,
@@ -128,7 +128,7 @@ registerLocaleData(localePt);
     MatSortModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     // {provide: LOCALE_ID,   useClass: TokenInterceptor}
 
   ],
