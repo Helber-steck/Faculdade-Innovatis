@@ -11,23 +11,25 @@ import { Router } from '@angular/router';
 export class fornecedorCreateComponent implements OnInit {
 
   fornecedor: fornecedor = {
-    razao_social: '',
+    idfornecedor: null, //id
+    razao_social: '', //name
     cnpj: null
   }
 
-  constructor(private fornecedorService: fornecedorService,
-      private router: Router) { }
+  constructor(
+    private fornecedorService: fornecedorService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    
   }
 
   createfornecedor(): void {
-    this.fornecedorService.create(this.fornecedor).subscribe(() => {
-      this.fornecedorService.showMessage('Criado!')
+    this.fornecedorService.create(this.fornecedor).subscribe(data => {
+      console.log(data)
+      this.fornecedorService.showMessage('criado!')
       this.router.navigate(['/fornecedors'])
     })
-
   }
 
   cancel(): void {

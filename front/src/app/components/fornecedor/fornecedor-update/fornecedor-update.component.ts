@@ -9,7 +9,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./fornecedor-update.component.css"],
 })
 export class fornecedorUpdateComponent implements OnInit {
-  fornecedor: fornecedor;
+
+  fornecedor: fornecedor = {
+    idfornecedor: null, //id
+    razao_social: '', //name
+    cnpj: null
+  }
 
   constructor(
     private fornecedorService: fornecedorService,
@@ -18,8 +23,8 @@ export class fornecedorUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const idfornecedor = +this.route.snapshot.paramMap.get("idfornecedor");
-    this.fornecedorService.readById(idfornecedor).subscribe((fornecedor) => {
+    const id =+ this.route.snapshot.paramMap.get("id");
+    this.fornecedorService.readById(id).subscribe((fornecedor) => {
       this.fornecedor = fornecedor;
     });
   }

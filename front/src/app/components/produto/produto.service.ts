@@ -10,7 +10,6 @@ import { catchError, map } from "rxjs/operators";
 })
 export class ProdutoService {
 
-    produto = "";
     baseUrl = "http://54.90.39.27:5000/produtos";
 
     constructor(private snackBar: MatSnackBar, private http: HttpClient) { }

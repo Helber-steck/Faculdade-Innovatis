@@ -5,17 +5,21 @@
 <div class="box-div">
 
 <mat-card>
+    
     <mat-card-title>Alterar</mat-card-title>
+    
     <form>
+
         <mat-form-field>
-            <input matInput placeholder="Nome do produto"
-                [(ngModel)]="fornecedor.razao_social" name="razao_social">
+            <input matInput placeholder="cnpj" [(ngModel)]="fornecedor.cnpj" name="cnpj">
         </mat-form-field>
+
         <mat-form-field>
-            <input matInput placeholder="CNPJ"
-                [(ngModel)]="fornecedor.cnpj" name="cnpj">
+            <input matInput placeholder="razao_social" [(ngModel)]="fornecedor.razao_social" name="razao_social">
         </mat-form-field>
+
     </form>
+
     <button mat-raised-button (click)="updatefornecedor()" color="primary">
         Atualizar
     </button>
@@ -23,6 +27,7 @@
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
+
 </mat-card>
 
 </div>

@@ -24,7 +24,7 @@ export class fornecedorService {
   }
 
   create(fornecedor: fornecedor): Observable<fornecedor> {
-    return this.http.post<fornecedor>(this.baseUrl, fornecedor).pipe(
+    return this.http.post(`${this.baseUrl}/novo`, fornecedor).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

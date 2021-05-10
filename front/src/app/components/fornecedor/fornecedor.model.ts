@@ -1,10 +1,7 @@
 export interface fornecedor {
-    // id?: number
-    idfornecedor?: number
-    
-    // name: string
-    razao_social: string
-    
-    // cnpj: number
+    idfornecedor?: number //id
+    razao_social: string //name
     cnpj: number
 }
+
+ 

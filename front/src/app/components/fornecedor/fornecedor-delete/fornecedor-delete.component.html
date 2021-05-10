@@ -4,25 +4,34 @@
 
 <div class="box-div">
 
-<mat-card>
-    <mat-card-title>Excluir</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome do produto"
-                [value]="fornecedor.razao_social" name="razao_social" disabled>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="CNPJ"
-                [value]="fornecedor.cnpj" name="cnpj" disabled>
-        </mat-form-field>
-    </form>
-    <button mat-raised-button (click)="deletefornecedor()" color="warn">
-        Excluir
-    </button>
-    
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
-</mat-card>
+    <mat-card>
+        
+        <mat-card-title>Excluir</mat-card-title>
+        
+        <form>
+            
+            <mat-form-field>
+                <input matInput placeholder="idfornecedor" [value]="fornecedor?.idfornecedor" name="idfornecedor" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="razao_social" [value]="fornecedor?.razao_social" name="razao_social" disabled>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="cnpj" [value]="fornecedor?.cnpj" name="cnpj" disabled>
+            </mat-form-field>
+
+        </form>
+
+        <button mat-raised-button (click)="deletefornecedor()" color="warn">
+            Excluir
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+        
+    </mat-card>
 
 </div>

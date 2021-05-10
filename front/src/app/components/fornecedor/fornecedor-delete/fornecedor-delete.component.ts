@@ -17,12 +17,20 @@ export class fornecedorDeleteComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  // ngOnInit(): void {
+  //   const idfornecedor = +this.route.snapshot.paramMap.get('idfornecedor');
+  //   this.fornecedorService.readById(idfornecedor).subscribe((fornecedor) => {
+  //     this.fornecedor = fornecedor;
+  //   });
+  // }
+
   ngOnInit(): void {
-    const idfornecedor = +this.route.snapshot.paramMap.get('idfornecedor');
-    this.fornecedorService.readById(idfornecedor).subscribe((fornecedor) => {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.fornecedorService.readById(id).subscribe((fornecedor) => {
       this.fornecedor = fornecedor;
     });
   }
+ 
 
   deletefornecedor(): void {
     this.fornecedorService.delete(this.fornecedor.idfornecedor).subscribe(() => {

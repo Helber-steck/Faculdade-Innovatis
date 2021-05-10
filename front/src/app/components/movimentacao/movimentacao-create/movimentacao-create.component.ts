@@ -30,7 +30,7 @@ export class movimentacaoCreateComponent implements OnInit {
   }
  
   createmovimentacao(): void {
-    console.log("teste")
+    // console.log("teste");
     this.movimentacaoService.create(this.movimentacao).subscribe(data => {
       console.log(data)
       this.movimentacaoService.showMessage('criado!')
