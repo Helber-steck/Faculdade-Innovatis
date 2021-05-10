@@ -15,10 +15,10 @@ export class movimentacaoCreateComponent implements OnInit {
     id_usuario: null,
     idmovimentacao: null, //id
     data_hora: null,
-    login_usuario: "",
-    nome_produto: "",
+    login_usuario: '',
+    nome_produto: '',
     quantidade: null,
-    tipo_movimentacao: "" //name
+    tipo_movimentacao: '', //name
   }
 
   constructor(
@@ -30,8 +30,8 @@ export class movimentacaoCreateComponent implements OnInit {
   }
  
   createmovimentacao(): void {
+    console.log("teste")
     this.movimentacaoService.create(this.movimentacao).subscribe(data => {
-      console.log("tester")
       console.log(data)
       this.movimentacaoService.showMessage('criado!')
       this.router.navigate(['/movimentacoes'])

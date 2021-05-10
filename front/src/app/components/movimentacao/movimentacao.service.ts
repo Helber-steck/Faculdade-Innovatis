@@ -8,6 +8,7 @@ import { map, catchError } from "rxjs/operators";
 @Injectable({
   providedIn: "root",
 })
+
 export class movimentacaoService {
   
   baseUrl = "http://54.90.39.27:5000/movimentacoes";
