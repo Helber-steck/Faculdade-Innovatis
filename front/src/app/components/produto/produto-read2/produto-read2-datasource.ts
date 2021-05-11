@@ -73,7 +73,7 @@ export class ProdutoRead2DataSource extends DataSource<Produto> {
       switch (this.sort.active) {
         case 'id_categoria': return compare(a.id_categoria, b.id_categoria, isAsc);
         case 'id_fornecedor': return compare(+a.id_fornecedor, +b.id_fornecedor, isAsc);
-        case 'idproduto': return compare(+a.idproduto, +b.idproduto, isAsc);
+        // case 'idproduto': return compare(+a.idproduto, +b.idproduto, isAsc);
         default: return 0;
       }
     });

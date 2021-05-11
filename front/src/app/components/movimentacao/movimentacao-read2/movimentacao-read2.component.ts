@@ -17,7 +17,7 @@ export class movimentacaoRead2Component implements AfterViewInit, OnInit {
   dataSource: movimentacaoRead2DataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'quantidade',  'name', 'data', 'idusuario', 'idproduto'];
+  displayedColumns = ['id_produto', 'id_usuario',  'idmovimentacao', 'data_hora', 'login_usuario', 'nome_produto', 'quantidade', 'tipo_movimentacao' ];
 
   ngOnInit() {
     this.dataSource = new movimentacaoRead2DataSource();

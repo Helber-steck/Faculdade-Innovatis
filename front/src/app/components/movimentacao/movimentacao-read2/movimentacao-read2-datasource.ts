@@ -7,14 +7,24 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 const EXAMPLE_DATA: movimentacao[] = [
   {
-    id_produto: 0,
-    id_usuario: 0,
-    idmovimentacao: 0, //id
-    data_hora: 0,
-    login_usuario: "",
-    nome_produto: "",
-    quantidade: 0,
-    tipo_movimentacao: "" //name
+    id_produto: 1,
+    id_usuario: 1,
+    idmovimentacao: 1, 
+    data_hora: 1,
+    login_usuario: 'Hydrogen',
+    nome_produto: 'Hydrogen',
+    quantidade: 1,
+    tipo_movimentacao: 'Hydrogen' 
+  },
+  {
+    id_produto: 1,
+    id_usuario: 1,
+    idmovimentacao: 1, 
+    data_hora: 1,
+    login_usuario: 'Hydrogen',
+    nome_produto: 'Hydrogen',
+    quantidade: 1,
+    tipo_movimentacao: 'Hydrogen' 
   },
 ];
 
@@ -27,6 +37,8 @@ export class movimentacaoRead2DataSource extends DataSource<movimentacao> {
   data: movimentacao[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
+
+  row:"";
 
   constructor() {
     super();
@@ -78,8 +90,14 @@ export class movimentacaoRead2DataSource extends DataSource<movimentacao> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'tipo_movimentacao': return compare(a.tipo_movimentacao, b.tipo_movimentacao, isAsc);
+        case 'id_produto': return compare(a.id_produto, b.id_produto, isAsc);
+        case 'id_usuario': return compare(+a.id_usuario, +b.id_usuario, isAsc);
         case 'idmovimentacao': return compare(+a.idmovimentacao, +b.idmovimentacao, isAsc);
+        case 'data_hora': return compare(+a.data_hora, +b.data_hora, isAsc);
+        case 'login_usuario': return compare(+a.login_usuario, +b.login_usuario, isAsc);
+        case 'nome_produto': return compare(+a.nome_produto, +b.nome_produto, isAsc);
+        case 'quantidade': return compare(+a.quantidade, +b.quantidade, isAsc);
+        case 'tipo_movimentacao': return compare(+a.tipo_movimentacao, +b.tipo_movimentacao, isAsc);
         default: return 0;
       }
     });
