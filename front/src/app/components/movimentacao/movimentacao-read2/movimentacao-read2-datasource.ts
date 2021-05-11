@@ -10,21 +10,21 @@ const EXAMPLE_DATA: movimentacao[] = [
     id_produto: 1,
     id_usuario: 1,
     idmovimentacao: 1, 
-    data_hora: 1,
-    login_usuario: 'Hydrogen',
-    nome_produto: 'Hydrogen',
+    data_hora: 110521,
+    login_usuario: 'iglesias21',
+    nome_produto: 'Primeiro produto',
     quantidade: 1,
-    tipo_movimentacao: 'Hydrogen' 
+    tipo_movimentacao: 'SAIDA' 
   },
   {
     id_produto: 1,
     id_usuario: 1,
     idmovimentacao: 1, 
-    data_hora: 1,
-    login_usuario: 'Hydrogen',
-    nome_produto: 'Hydrogen',
+    data_hora: 110521,
+    login_usuario: 'iglesias21',
+    nome_produto: 'Primeiro produto',
     quantidade: 1,
-    tipo_movimentacao: 'Hydrogen' 
+    tipo_movimentacao: 'SAIDA' 
   },
 ];
 

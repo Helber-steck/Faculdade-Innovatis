@@ -47,22 +47,6 @@ export class movimentacaoService {
     );
   }
 
-  update(movimentacao: movimentacao): Observable<movimentacao> {
-    const url = `${this.baseUrl2}/${movimentacao.idmovimentacao}`;
-    return this.http.put<movimentacao>(url, movimentacao).pipe(
-      map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
-    );
-  }
-
-  delete(idmovimentacao: number): Observable<movimentacao> {
-    const url = `${this.baseUrl}/${idmovimentacao}`;
-    return this.http.delete<movimentacao>(url).pipe(
-      map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
-    );
-  }
-
   errorHandler(e: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);
     return EMPTY;

@@ -8,8 +8,6 @@ import { categoriaUpdateComponent } from './components/categoria/categoria-updat
 import { categoriaCrudComponent } from "./views/categoria-crud/categoria-crud.component";
 import { categoriaCreateComponent } from './components/categoria/categoria-create/categoria-create.component';
 
-import { movimentacaoDeleteComponent } from './components/movimentacao/movimentacao-delete/movimentacao-delete.component';
-import { movimentacaoUpdateComponent } from './components/movimentacao/movimentacao-update/movimentacao-update.component';
 import { movimentacaoCrudComponent } from "./views/movimentacao-crud/movimentacao-crud.component";
 import { movimentacaoCreateComponent } from './components/movimentacao/movimentacao-create/movimentacao-create.component';
 
@@ -62,15 +60,6 @@ const routes: Routes = [
     path: "movimentacoes/create",
     component: movimentacaoCreateComponent
   },
-  {
-    path: "movimentacoes/update/:id",
-    component: movimentacaoUpdateComponent
-  },
-  {
-    path: "movimentacoes/delete/:id",
-    component: movimentacaoDeleteComponent
-  },
-
 
   {
     path: "produtos",

@@ -19,8 +19,6 @@ import { HomeComponent } from './views/home/home.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-
-
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -44,8 +42,6 @@ import { movimentacaoCrudComponent } from './views/movimentacao-crud/movimentaca
 import { movimentacaoCreateComponent } from './components/movimentacao/movimentacao-create/movimentacao-create.component';
 import { movimentacaoReadComponent } from './components/movimentacao/movimentacao-read/movimentacao-read.component';
 import { movimentacaoRead2Component } from './components/movimentacao/movimentacao-read2/movimentacao-read2.component';
-import { movimentacaoUpdateComponent } from './components/movimentacao/movimentacao-update/movimentacao-update.component';
-import { movimentacaoDeleteComponent } from './components/movimentacao/movimentacao-delete/movimentacao-delete.component';
 
 import { ProdutoCrudComponent } from './views/produto-crud/produto-crud.component';
 import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
@@ -92,8 +88,6 @@ registerLocaleData(localePt);
     movimentacaoCreateComponent,
     movimentacaoReadComponent,
     movimentacaoRead2Component,
-    movimentacaoUpdateComponent,
-    movimentacaoDeleteComponent,
 
     ProdutoCrudComponent,
     ProdutoCreateComponent,
