@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
+import { NavAdministradorComponent } from './components/template/nav-administrador/nav-administrador.component';
+
+
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
@@ -61,6 +64,14 @@ import { LoginComponent } from './views/login/login.component';
 import { map } from "rxjs/operators";
 import { TokenInterceptor } from './http-interceptors/token.interceptor';
 
+import { administradorCreateComponent } from './components/administrador/administrador-create/administrador-create.component';
+import { administradorReadComponent } from './components/administrador/administrador-read/administrador-read.component';
+import { administradorRead2Component } from './components/administrador/administrador-read2/administrador-read2.component';
+import { administradorUpdateComponent } from './components/administrador/administrador-update/administrador-update.component';
+import { administradorDeleteComponent } from './components/administrador/administrador-delete/administrador-delete.component';
+
+import { administradorCrudComponent } from "./views/administrador-crud/administrador-crud.component";
+
 
 
 registerLocaleData(localePt);
@@ -71,6 +82,7 @@ registerLocaleData(localePt);
     HeaderComponent,
     FooterComponent,
     NavComponent,
+    NavAdministradorComponent,
     HomeComponent,
     RedDirective,
     ForDirective,
@@ -102,6 +114,13 @@ registerLocaleData(localePt);
     fornecedorRead2Component,
     fornecedorUpdateComponent,
     fornecedorDeleteComponent,
+
+    administradorCrudComponent,
+    administradorReadComponent,
+    administradorRead2Component,
+    administradorCreateComponent,
+    administradorUpdateComponent,
+    administradorDeleteComponent,
   ],
   imports: [
     BrowserModule,

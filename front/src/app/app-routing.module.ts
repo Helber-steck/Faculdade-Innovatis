@@ -21,6 +21,11 @@ import { ProdutoUpdateComponent } from './components/produto/produto-update/prod
 import { ProdutoCrudComponent } from "./views/produto-crud/produto-crud.component";
 import { ProdutoCreateComponent } from './components/produto/produto-create/produto-create.component';
 
+import { administradorDeleteComponent } from './components/administrador/administrador-delete/administrador-delete.component';
+import { administradorUpdateComponent } from './components/administrador/administrador-update/administrador-update.component';
+import { administradorCreateComponent } from './components/administrador/administrador-create/administrador-create.component';
+import { administradorCrudComponent } from "./views/administrador-crud/administrador-crud.component";
+
 import { LoginComponent } from './views/login/login.component';
 
 
@@ -33,6 +38,23 @@ const routes: Routes = [
   {
     path: "",
     component: LoginComponent,
+  },
+
+  {
+    path: "administrador",
+    component: administradorCrudComponent,
+  },
+  {
+    path: "administrador/create",
+    component: administradorCreateComponent
+  },
+  {
+    path: "administrador/update/:id",
+    component: administradorUpdateComponent
+  },
+  {
+    path: "administrador/delete/:id",
+    component: administradorDeleteComponent
   },
 
   {

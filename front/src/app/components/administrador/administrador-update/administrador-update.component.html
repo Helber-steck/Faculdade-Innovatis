@@ -1,0 +1,42 @@
+<app-header></app-header>
+<app-nav-administrador></app-nav-administrador>
+
+
+<div class="box-div">
+
+    <mat-card>
+    
+        <mat-card-title>Alterar</mat-card-title>
+        
+        <form>
+         
+            <mat-form-field>
+                <input matInput placeholder="idusuario" [(ngModel)]="administrador.idusuario" name="idusuario">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="login" [(ngModel)]="administrador.login" name="login">
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input matInput placeholder="nome" [(ngModel)]="administrador.nome" name="nome">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="senha" [(ngModel)]="administrador.senha" name="senha">
+            </mat-form-field>
+
+
+        </form>
+        
+        <button mat-raised-button (click)="updateadministrador()" color="primary">
+            Atualizar
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    
+    </mat-card>
+
+</div>
