@@ -13,6 +13,7 @@ export class TokenInterceptor  implements HttpInterceptor {
 
       // Get the auth token from the service.
       const Token = localStorage.getItem('token'); 
+      const IdUsuario = localStorage.getItem('idUsuario'); 
       
       let newRequest: HttpRequest<any> = request;
       console.info(newRequest);
@@ -22,7 +23,7 @@ export class TokenInterceptor  implements HttpInterceptor {
         // setHeaders: { Authorization: `Bearer ${Token}`}});
 
         newRequest = request.clone({
-          headers: request.headers.set('Authorization', `Bearer ${Token}`)
+          headers: request.headers.set('Authorization', `Bearer ${Token}, ${IdUsuario}`)
         });
 
         // headers: request.headers.set('Authorization','Bearer $(Token)')});
