@@ -11,17 +11,19 @@ import { Router } from '@angular/router';
 export class movimentacaoCreateComponent implements OnInit {
   
   movimentacao: movimentacao = {
-    id_produto: null,
+    quantidade: null,
+    tipo_movimentacao: '', 
     id_usuario: null,
+    id_produto: null,
+   
     idmovimentacao: null, 
     data_hora: null,
     login_usuario: '',
     nome_produto: '',
-    quantidade: null,
-    tipo_movimentacao: '', 
   }
+  
 
-  movimentacoes: movimentacao[]
+  movimentacoes: movimentacao[] = []
  
   constructor(
     private movimentacaoService: movimentacaoService,
