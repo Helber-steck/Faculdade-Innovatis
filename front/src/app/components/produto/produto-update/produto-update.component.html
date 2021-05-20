@@ -10,7 +10,8 @@
     
     <form>
 
-        <!-- <mat-form-field>
+        <!-- 
+        <mat-form-field>
             <input matInput placeholder="id_categoria" [(ngModel)]="produto.id_categoria" name="id_categoria">
         </mat-form-field>
 
@@ -20,7 +21,8 @@
 
         <mat-form-field>
             <input matInput placeholder="idproduto" [(ngModel)]="produto.idproduto" name="idproduto">
-        </mat-form-field> -->
+        </mat-form-field> 
+        -->
 
         <mat-form-field>
             <input matInput placeholder="nome_produto" [(ngModel)]="produto.nome_produto" name="nome_produto">
@@ -33,6 +35,14 @@
         <mat-form-field>
             <input matInput placeholder="status_produto" [(ngModel)]="produto.status_produto" name="status_produto">
         </mat-form-field>
+
+        <mat-form-field>
+            <mat-select>
+                <mat-option *ngFor="let produto of produto" [value]="produto.nome_produto">
+                    {{ produto.nome_produto }} 
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
        
     </form>
 
@@ -43,6 +53,7 @@
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
+
 </mat-card>
 
 </div>
