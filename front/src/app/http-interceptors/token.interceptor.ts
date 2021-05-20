@@ -2,6 +2,7 @@ import { LoginServiceService } from './../views/login/login-service.service';
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 /** Pass untouched request through to the next request handler. */
 @Injectable()
@@ -13,7 +14,7 @@ export class TokenInterceptor  implements HttpInterceptor {
 
       // Get the auth token from the service.
       const Token = localStorage.getItem('token'); 
-      const IdUsuario = localStorage.getItem('idUsuario'); 
+      const id_usuario = localStorage.getItem('idUsuario'); 
       
       let newRequest: HttpRequest<any> = request;
       console.info(newRequest);
@@ -23,7 +24,7 @@ export class TokenInterceptor  implements HttpInterceptor {
         // setHeaders: { Authorization: `Bearer ${Token}`}});
 
         newRequest = request.clone({
-          headers: request.headers.set('Authorization', `Bearer ${Token}, ${IdUsuario}`)
+          headers: request.headers.set('Authorization', `Bearer ${Token}, ${id_usuario}`)
         });
 
         // headers: request.headers.set('Authorization','Bearer $(Token)')});

@@ -10,11 +10,14 @@ import { Router } from '@angular/router';
 })
 export class movimentacaoCreateComponent implements OnInit {
   
+  
+
   movimentacao: movimentacao = {
     quantidade: null,
     tipo_movimentacao: '', 
     id_usuario: null,
     id_produto: null,
+    
    
     idmovimentacao: null, 
     data_hora: null,

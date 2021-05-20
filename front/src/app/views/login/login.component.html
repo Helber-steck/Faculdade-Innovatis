@@ -8,7 +8,7 @@
                 <h1>Login</h1>
                 <p>Entre com seus dados corretamente para acessar o sistema.</p>
                 <input [(ngModel)] = "usuario.login" id="login" placeholder="Login">
-                <input [(ngModel)] = "usuario.senha" id="senha" placeholder="Senha">
+                <input type="password" [(ngModel)] = "usuario.senha" id="senha" placeholder="Senha">
                 <!-- <button type="button" class=" btn btn-primary"  (click)="login()"  routerLink="/home">Entrar</button> -->
                 <button type="button" class=" btn btn-primary"  (click)="login()">Entrar</button>
                    

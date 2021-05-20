@@ -16,10 +16,32 @@
             <mat-form-field>
                 <input matInput placeholder="tipo_movimentacao" [(ngModel)]="movimentacao.tipo_movimentacao"
                     name="tipo_movimentacao">
+                   <!-- Default unchecked -->
+<div class="custom-control custom-radio">
+    <input type="radio" class="form-check-input" id="materialUnchecked" name="materialExampleRadios" mdbInput>
+    <label class="form-check-label" for="materialUnchecked">Entrada</label>
+    <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" mdbInput>
+    <label class="custom-control-label" for="defaultUnchecked">Ativo</label>
+    <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" mdbInput>
+    <label class="custom-control-label" for="defaultUnchecked">Inativo</label>
+  </div>
+  
+  
+  <!-- Material unchecked -->
+<div class="form-check">
+    <input type="radio" class="form-check-input" id="materialUnchecked" name="materialExampleRadios" mdbInput>
+    <label class="form-check-label" for="materialUnchecked">Saida</label>
+    <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" mdbInput>
+    <label class="custom-control-label" for="defaultUnchecked">Ativo</label>
+    <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" mdbInput>
+    <label class="custom-control-label" for="defaultUnchecked">Inativo</label>
+  </div>
+  
+  
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="id_usuario" [(ngModel)]="movimentacao.id_usuario" name="id_usuario">
+                <input matInput placeholder="id_usuario" [(ngModel)]=" movimentacao.id_usuario" name="id_usuario">
             </mat-form-field>
 
             <!-- <mat-form-field>
