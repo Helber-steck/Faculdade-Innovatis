@@ -73,6 +73,7 @@ import { administradorDeleteComponent } from './components/administrador/adminis
 import { administradorCrudComponent } from "./views/administrador-crud/administrador-crud.component";
 
 import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 registerLocaleData(localePt);
 
@@ -139,7 +140,8 @@ registerLocaleData(localePt);
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

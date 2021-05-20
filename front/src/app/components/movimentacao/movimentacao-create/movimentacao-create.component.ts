@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./movimentacao-create.component.css']
 })
 export class movimentacaoCreateComponent implements OnInit {
-  
-  
 
   movimentacao: movimentacao = {
     quantidade: null,
@@ -26,7 +24,7 @@ export class movimentacaoCreateComponent implements OnInit {
   }
   
 
-  movimentacoes: movimentacao[] = []
+  movimentacoes: movimentacao[]
  
   constructor(
     private movimentacaoService: movimentacaoService,
@@ -34,8 +32,8 @@ export class movimentacaoCreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.movimentacaoService.read().subscribe(movimentacao => {
-      this.movimentacoes = movimentacao
+    this.movimentacaoService.teste().subscribe(movimentacoes => {
+      this.movimentacoes = movimentacoes
     })
   }
 
