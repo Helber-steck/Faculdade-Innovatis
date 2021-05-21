@@ -22,7 +22,8 @@ export class LoginServiceService {
       localStorage.setItem("token", token);
       localStorage.setItem("idUsuario",idUsuario);
       this.router.navigate(['/home']);
-      console.info(token,idUsuario)
+      console.info(token)
+      console.info(idUsuario)
     });
   }
 }

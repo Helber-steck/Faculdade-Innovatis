@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './movimentacao-create.component.html',
   styleUrls: ['./movimentacao-create.component.css']
 })
-export class movimentacaoCreateComponent implements OnInit {
 
+
+export class movimentacaoCreateComponent implements OnInit {
   movimentacao: movimentacao = {
     quantidade: null,
     tipo_movimentacao: '', 
@@ -21,8 +22,6 @@ export class movimentacaoCreateComponent implements OnInit {
     nome_produto: '',
   }
   
-  
-
   movimentacoes: movimentacao
  
   constructor(
