@@ -16,16 +16,6 @@ const EXAMPLE_DATA: movimentacao[] = [
     quantidade: 1,
     tipo_movimentacao: 'SAIDA' 
   },
-  {
-    id_produto: 1,
-    id_usuario: 1,
-    idmovimentacao: 1, 
-    data_hora: 110521,
-    login_usuario: 'iglesias21',
-    nome_produto: 'Primeiro produto',
-    quantidade: 1,
-    tipo_movimentacao: 'SAIDA' 
-  },
 ];
 
 /**
@@ -90,14 +80,14 @@ export class movimentacaoRead2DataSource extends DataSource<movimentacao> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'id_produto': return compare(a.id_produto, b.id_produto, isAsc);
-        case 'id_usuario': return compare(+a.id_usuario, +b.id_usuario, isAsc);
-        case 'idmovimentacao': return compare(+a.idmovimentacao, +b.idmovimentacao, isAsc);
-        case 'data_hora': return compare(+a.data_hora, +b.data_hora, isAsc);
-        case 'login_usuario': return compare(+a.login_usuario, +b.login_usuario, isAsc);
-        case 'nome_produto': return compare(+a.nome_produto, +b.nome_produto, isAsc);
         case 'quantidade': return compare(+a.quantidade, +b.quantidade, isAsc);
         case 'tipo_movimentacao': return compare(+a.tipo_movimentacao, +b.tipo_movimentacao, isAsc);
+        case 'id_usuario': return compare(+a.id_usuario, +b.id_usuario, isAsc);
+        case 'id_produto': return compare(a.id_produto, b.id_produto, isAsc);
+        // case 'idmovimentacao': return compare(+a.idmovimentacao, +b.idmovimentacao, isAsc);
+        // case 'data_hora': return compare(+a.data_hora, +b.data_hora, isAsc);
+        // case 'login_usuario': return compare(+a.login_usuario, +b.login_usuario, isAsc);
+        // case 'nome_produto': return compare(+a.nome_produto, +b.nome_produto, isAsc);
         default: return 0;
       }
     });

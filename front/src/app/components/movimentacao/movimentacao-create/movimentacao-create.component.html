@@ -13,46 +13,44 @@
                 <input matInput placeholder="quantidade" [(ngModel)]="movimentacao.quantidade" name="quantidade">
             </mat-form-field>
 
-
-            <!-- <input matInput placeholder="tipo_movimentacao" [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao"> -->
             <label>Tipo movimentações</label>
-
+            <br>
+            <mat-radio-group [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao">
+                <mat-radio-button class="radio" value="ENTRADA">Entrada</mat-radio-button>
+                <mat-radio-button class="radio" value="SAIDA">Saída</mat-radio-button>
+            </mat-radio-group>
             <br>
 
-            <mat-radio-group [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao">
-                <mat-radio-button class="radio" value="Entrada">Entrada</mat-radio-button>
-                <mat-radio-button class="radio" value="Saida">Saída</mat-radio-button>
-                <!-- <mat-radio-button value="Ativo">Ativo</mat-radio-button>
-                    <mat-radio-button value="Inativo">Saída</mat-radio-button> -->
-            </mat-radio-group>
-
-            
-
-
-            
+            <!-- <mat-form-field>
+                <input matInput placeholder="tipo_movimentacao" [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao">
+            </mat-form-field> -->
 
             <mat-form-field>
-                <input matInput placeholder="id_usuario" [(ngModel)]="movimentacao.id_usuario" name="id_usuario">
+                <mat-label>ID usuario</mat-label>
+                <mat-select [(ngModel)]="movimentacao.id_usuario" name="id_usuario">
+                    <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.id_usuario">
+                        {{ movimentacoes.id_usuario }}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
 
             <!-- <mat-form-field>
-                <mat-select>
-                    <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacao.id_produto">
-                        {{ movimentacoes.id_produto }}
-                    </mat-option>
-                </mat-select>
+                <input matInput placeholder="id_usuario" [(ngModel)]="movimentacao.id_usuario" name="id_usuario">
             </mat-form-field> -->
 
             <mat-form-field>
                 <mat-label>ID produto</mat-label>
 
                 <mat-select [(ngModel)]="movimentacao.id_produto" name="id_produto">
-                    <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes">
+                    <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.id_produto">
                         {{ movimentacoes.id_produto }}
                     </mat-option>
                 </mat-select>
-                
             </mat-form-field>
+
+            <!-- <mat-form-field>
+                <input matInput placeholder="id_produto" [(ngModel)]="movimentacao.id_produto" name="id_produto">
+            </mat-form-field> -->
 
         </form>
 

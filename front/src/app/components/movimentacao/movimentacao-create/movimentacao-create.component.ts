@@ -15,16 +15,15 @@ export class movimentacaoCreateComponent implements OnInit {
     tipo_movimentacao: '', 
     id_usuario: null,
     id_produto: null,
-    
-   
     idmovimentacao: null, 
     data_hora: null,
     login_usuario: '',
     nome_produto: '',
   }
   
+  
 
-  movimentacoes: movimentacao[]
+  movimentacoes: movimentacao
  
   constructor(
     private movimentacaoService: movimentacaoService,

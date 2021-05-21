@@ -25,8 +25,8 @@ export class movimentacaoService {
     });
   }
 
-  teste(): Observable<movimentacao[]> {
-    return this.http.get<movimentacao[]>(this.baseUrl).pipe(
+  teste(): Observable<movimentacao> {
+    return this.http.get<movimentacao>(this.baseUrl).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
