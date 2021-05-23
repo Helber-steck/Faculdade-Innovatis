@@ -8,3 +8,7 @@ export interface movimentacao {
     quantidade: number,
     tipo_movimentacao: string //name
 }
+
+export interface movimentacaoUsuario {
+    loginUsuario: number
+}

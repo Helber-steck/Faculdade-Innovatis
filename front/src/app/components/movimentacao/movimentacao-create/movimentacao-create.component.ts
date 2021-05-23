@@ -1,6 +1,6 @@
-import { movimentacao } from './../movimentacao.model';
+import { movimentacao, movimentacaoUsuario } from './../movimentacao.model';
 import { movimentacaoService } from './../movimentacao.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,13 @@ import { Router } from '@angular/router';
 
 
 export class movimentacaoCreateComponent implements OnInit {
+  
+  @Input() loginUsuario: any
+
+  movimentacaoUsuario: movimentacaoUsuario = {
+    loginUsuario: null,
+  }
+  
   movimentacao: movimentacao = {
     quantidade: null,
     tipo_movimentacao: '', 
@@ -22,8 +29,8 @@ export class movimentacaoCreateComponent implements OnInit {
     nome_produto: '',
   }
   
-  movimentacoes: movimentacao
- 
+  movimentacoes: movimentacao /// carrega os dados no select
+
   constructor(
     private movimentacaoService: movimentacaoService,
     private router: Router
@@ -33,6 +40,9 @@ export class movimentacaoCreateComponent implements OnInit {
     this.movimentacaoService.teste().subscribe(movimentacoes => {
       this.movimentacoes = movimentacoes
     })
+
+    var usuario = window.localStorage.getItem('idUsuario');
+    this.loginUsuario = usuario
   }
 
   createmovimentacao(): void {
@@ -40,6 +50,8 @@ export class movimentacaoCreateComponent implements OnInit {
       this.movimentacaoService.showMessage('criado!')
       this.router.navigate(['/movimentacoes'])
     })
+ 
+
   }
 
   cancel(): void {

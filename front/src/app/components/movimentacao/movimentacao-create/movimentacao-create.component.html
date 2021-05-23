@@ -5,7 +5,7 @@
 
     <mat-card>
 
-        <mat-card-title>Movimentação</mat-card-title>
+        <mat-card-title>Movimentação: usuario {{loginUsuario}}</mat-card-title>
 
         <form>
 
@@ -33,6 +33,15 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput [value]="loginUsuario" placeholder="id_usuario"   name="id_usuario" disabled>
+            </mat-form-field>
+
+            
+                
+          
 
             <!-- <mat-form-field>
                 <input matInput placeholder="id_usuario" [(ngModel)]="movimentacao.id_usuario" name="id_usuario">
