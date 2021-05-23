@@ -6,11 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  loginUsuario: string;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+    var usuario = window.localStorage.getItem('idUsuario');
+    this.loginUsuario = usuario
+    // alert(`usuario:, ${ usuario }!`);
   }
+
 
   sair() {
     window.localStorage.clear();
