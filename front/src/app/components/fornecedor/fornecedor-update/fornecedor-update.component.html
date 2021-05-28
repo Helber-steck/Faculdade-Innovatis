@@ -8,19 +8,19 @@
     
     <mat-card-title>Alterar</mat-card-title>
     
-    <form>
+    <form #clienteForm="ngForm">
 
         <mat-form-field>
-            <input matInput placeholder="cnpj" [(ngModel)]="fornecedor.cnpj" name="cnpj">
+            <input matInput placeholder="cnpj" [(ngModel)]="fornecedor.cnpj" name="cnpj" required>
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="razao_social" [(ngModel)]="fornecedor.razao_social" name="razao_social">
+            <input matInput placeholder="razao_social" [(ngModel)]="fornecedor.razao_social" name="razao_social" required>
         </mat-form-field>
 
     </form>
 
-    <button mat-raised-button (click)="updatefornecedor()" color="primary">
+    <button mat-raised-button (click)="updatefornecedor()" color="primary" [disabled]="!clienteForm.form.valid"> 
         Atualizar
     </button>
     

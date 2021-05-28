@@ -23,6 +23,13 @@ export class ProdutoService {
         })
     }
 
+    teste(): Observable<Produto> {
+        return this.http.get<Produto>(this.baseUrl).pipe(
+          map((obj) => obj),
+          catchError((e) => this.errorHandler(e))
+        );
+      }
+
     create(produto: Produto): Observable<Produto> {
         return this.http.post(`${this.baseUrl}/novo`, produto).pipe(
             map((obj) => obj),

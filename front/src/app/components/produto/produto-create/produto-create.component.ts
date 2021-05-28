@@ -1,6 +1,6 @@
 import { Produto } from './../produto.model';
 import { ProdutoService } from './../produto.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./produto-create.component.css']
 })
 export class ProdutoCreateComponent implements OnInit {
+
+  @Input() loginUsuario: any
 
   produto: Produto = {
     id_categoria: null,
@@ -19,18 +21,32 @@ export class ProdutoCreateComponent implements OnInit {
     status_produto: '',
   }
 
+  produtos: Produto
+
   constructor(
     private produtoService: ProdutoService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.produtoService.teste().subscribe(produtos => {
+      this.produtos = produtos
+    })
 
+    var usuario = window.localStorage.getItem('idUsuario');
+    this.loginUsuario = usuario
   }
 
   createProduto(): void {
-    this.produtoService.create(this.produto).subscribe(() => {
-      this.produtoService.showMessage('Criado!')
+
+    if(this.produto.quantidade <= 0) {
+      this.produtoService.showMessage('Quantidade deve ser maior que 0', true)
+      return;
+    }
+
+    this.produtoService.create(this.produto)
+    .subscribe(data => {
+      this.produtoService.showMessage('criado!')
       this.router.navigate(['/produtos'])
     })
 

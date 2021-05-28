@@ -1,6 +1,8 @@
 import { LoginServiceService } from './login-service.service';
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from "@angular/common/http";
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,11 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginService: LoginServiceService, 
+    private http: HttpClient 
   ) { }
+
+
+
 
 
   ngOnInit() {
@@ -21,7 +27,6 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     this.loginService.login(this.usuario); 
-    this.loginService.showMessage('criado!')
   }
  
  
