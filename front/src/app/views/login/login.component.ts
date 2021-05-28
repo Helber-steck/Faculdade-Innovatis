@@ -9,14 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  usuario = {login: '', senha:''};
+  usuario = { login: '', senha: '' };
 
-  constructor(private loginService:LoginServiceService) { }
+  constructor(
+    private loginService: LoginServiceService, 
+  ) { }
 
-  public login(){
-   this.loginService.login(this.usuario);
-  }
+
   ngOnInit() {
   }
 
+  login(): void {
+    this.loginService.login(this.usuario); 
+    this.loginService.showMessage('criado!')
+  }
+ 
+ 
 }

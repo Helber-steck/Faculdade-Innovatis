@@ -6,16 +6,16 @@
 
 <mat-card>
     <mat-card-title>Categorias</mat-card-title>
-    <form>
+    
+    <form #clienteForm="ngForm">
 
         <mat-form-field>
             <input matInput placeholder="Nome"
-                [(ngModel)]="categoria.nome_categoria" name="nome_categoria">
+                [(ngModel)]="categoria.nome_categoria" name="nome_categoria" required>
         </mat-form-field>
        
     </form>
-    <button mat-raised-button (click)="createcategoria()" color="primary">
-        Salvar
+    <button mat-raised-button (click)="createcategoria()" color="primary" [disabled]="!clienteForm.form.valid">        Salvar
     </button>
     
     <button mat-raised-button (click)="cancel()">

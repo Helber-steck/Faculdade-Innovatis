@@ -32,8 +32,6 @@ export class ProdutoDeleteComponent implements OnInit {
     });
   }
 
-  
-
   deleteProduto(): void {
     this.produtoService.delete(this.produto.idproduto).subscribe(() => {
       this.produtoService.showMessage("Excluido com sucesso!");

@@ -8,15 +8,15 @@
     
         <mat-card-title>Alterar</mat-card-title>
         
-        <form>
+        <form #clienteForm="ngForm">
 
             <mat-form-field>
-                <input matInput placeholder="Nome" [(ngModel)]="categoria.nome_categoria" name="nome_categoria">
+                <input matInput placeholder="Nome" [(ngModel)]="categoria.nome_categoria" name="nome_categoria" required>
             </mat-form-field>
 
         </form>
         
-        <button mat-raised-button (click)="updatecategoria()" color="primary">
+        <button mat-raised-button (click)="updatecategoria()" color="primary" [disabled]="!clienteForm.form.valid">
             Atualizar
         </button>
 

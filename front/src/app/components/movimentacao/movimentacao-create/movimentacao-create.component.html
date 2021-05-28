@@ -7,15 +7,15 @@
 
         <mat-card-title>Movimentação: usuario {{loginUsuario}}</mat-card-title>
 
-        <form>
+        <form #clienteForm="ngForm">
 
             <mat-form-field>
-                <input matInput placeholder="quantidade" [(ngModel)]="movimentacao.quantidade" name="quantidade">
+                <input matInput placeholder="quantidade" [(ngModel)]="movimentacao.quantidade" name="quantidade" required>
             </mat-form-field>
 
             <label>Tipo movimentações</label>
             <br>
-            <mat-radio-group [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao">
+            <mat-radio-group [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao" required>
                 <mat-radio-button class="radio" value="ENTRADA">Entrada</mat-radio-button>
                 <mat-radio-button class="radio" value="SAIDA">Saída</mat-radio-button>
             </mat-radio-group>
@@ -25,22 +25,20 @@
                 <input matInput placeholder="tipo_movimentacao" [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao">
             </mat-form-field> -->
 
-            <mat-form-field>
+             <mat-form-field>
                 <mat-label>ID usuario</mat-label>
-                <mat-select [(ngModel)]="movimentacao.id_usuario" name="id_usuario">
+                <mat-select [(ngModel)]="movimentacao.id_usuario" name="id_usuario" required>
                     <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.id_usuario">
                         {{ movimentacoes.id_usuario }}
                     </mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field>  
 
 
-            <mat-form-field>
-                <input matInput [value]="loginUsuario" placeholder="id_usuario"   name="id_usuario" disabled>
-            </mat-form-field>
 
-            
-                
+            <!-- esse aquiii <mat-form-field>
+                <input matInput [value]="loginUsuario" placeholder="id_usuario" name="id_usuario" disabled>
+            </mat-form-field> -->
           
 
             <!-- <mat-form-field>
@@ -50,9 +48,20 @@
             <mat-form-field>
                 <mat-label>ID produto</mat-label>
 
-                <mat-select [(ngModel)]="movimentacao.id_produto" name="id_produto">
+                <mat-select [(ngModel)]="movimentacao.id_produto" name="id_produto" required> 
                     <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.id_produto">
                         {{ movimentacoes.id_produto }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <mat-label>nome produto</mat-label>
+
+                <mat-select [(ngModel)]="movimentacao.nome_produto" name="nome_produto" required> 
+                    <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.nome_produto">
+                        {{ movimentacoes.nome_produto }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -60,17 +69,17 @@
             <!-- <mat-form-field>
                 <input matInput placeholder="id_produto" [(ngModel)]="movimentacao.id_produto" name="id_produto">
             </mat-form-field> -->
-
+    
         </form>
 
-        <button mat-raised-button (click)="createmovimentacao()" color="primary">
+        <button mat-raised-button (click)="createmovimentacao()" color="primary" [disabled]="!clienteForm.form.valid">
             Salvar
         </button>
 
         <button mat-raised-button (click)="cancel()">
             Cancelar
         </button>
-
+        
     </mat-card>
 
 </div>

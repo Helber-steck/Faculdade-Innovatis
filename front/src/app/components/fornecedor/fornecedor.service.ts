@@ -62,7 +62,7 @@ export class fornecedorService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Ocorreu um erro!", true);
+    this.showMessage("Fornecedor já existe ou fornecedor com produto já cadastrado", true);
     return EMPTY;
   }
 }

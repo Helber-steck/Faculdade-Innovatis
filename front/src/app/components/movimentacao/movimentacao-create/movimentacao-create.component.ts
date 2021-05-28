@@ -46,11 +46,17 @@ export class movimentacaoCreateComponent implements OnInit {
   }
 
   createmovimentacao(): void {
-    this.movimentacaoService.create(this.movimentacao).subscribe(data => {
+
+    if(this.movimentacao.quantidade <= 0) {
+      this.movimentacaoService.showMessage('Quantidade deve ser maior que 0', true)
+      return;
+    }
+
+    this.movimentacaoService.create(this.movimentacao)
+    .subscribe(data => {
       this.movimentacaoService.showMessage('criado!')
       this.router.navigate(['/movimentacoes'])
     })
- 
 
   }
 
