@@ -8,28 +8,28 @@
     
         <mat-card-title>Alterar</mat-card-title>
         
-        <form>
+        <form #clienteForm="ngForm">
          
-            <mat-form-field>
+            <!-- <mat-form-field>
                 <input matInput placeholder="idusuario" [(ngModel)]="administrador.idusuario" name="idusuario">
-            </mat-form-field>
+            </mat-form-field> -->
 
             <mat-form-field>
-                <input matInput placeholder="login" [(ngModel)]="administrador.login" name="login">
+                <input matInput placeholder="login" [(ngModel)]="administrador.login" name="login" required>
             </mat-form-field>
             
             <mat-form-field>
-                <input matInput placeholder="nome" [(ngModel)]="administrador.nome" name="nome">
+                <input matInput placeholder="nome" [(ngModel)]="administrador.nome" name="nome" required>
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="senha" [(ngModel)]="administrador.senha" name="senha">
+                <input matInput type="password" placeholder="senha" [(ngModel)]="administrador.senha" name="senha" required>
             </mat-form-field>
 
 
         </form>
         
-        <button mat-raised-button (click)="updateadministrador()" color="primary">
+        <button mat-raised-button (click)="updateadministrador()" color="primary" [disabled]="!clienteForm.form.valid"> 
             Atualizar
         </button>
 
