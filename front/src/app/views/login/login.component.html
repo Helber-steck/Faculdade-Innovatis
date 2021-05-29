@@ -14,7 +14,12 @@
 
                 <input type="password" id="senha" placeholder="Senha" required [(ngModel)]="usuario.senha" name="senha">
                 
-                <button type="button" class="btn btn-primary" (click)="login()" [disabled]="!clienteForm.form.valid">Entrar</button>
+                <button type="button" class="btn btn-primary" (click)="login()" disabled [disabled]="!clienteForm.form.valid">Entrar</button>
+                
+                <br>
+
+                <button type="button" class="btn btn-primary" (click)="adm()" disabled [disabled]="!clienteForm.form.valid">Administrador</button>
+                
                 </form>
             </div>
         </div>

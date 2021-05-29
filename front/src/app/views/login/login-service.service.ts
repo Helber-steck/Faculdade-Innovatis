@@ -14,6 +14,8 @@ export class LoginServiceService {
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar,  private router: Router) { }
 
+  usuario = { login: '', senha: '' };
+
   login(usuario) {
     const options = {
       headers: { 'Content-Type': 'application/json', }
@@ -24,11 +26,43 @@ export class LoginServiceService {
           /*Retorno Http*/
           var token = JSON.parse(JSON.stringify(data)).token;
           var idUsuario = JSON.parse(JSON.stringify(data)).idUsuario;
+          
+          
           localStorage.setItem("token", token);
           localStorage.setItem("idUsuario",idUsuario);
-          this.router.navigate(['/home']);
+          
+          this.router.navigate(['/home']); 
+          
+          
+          
           console.info(token)
           console.info(idUsuario)
+
+        }
+      ),
+      catchError((e) => this.errorHandler(e))
+  }
+
+  adm(usuario) {
+    const options = {
+      headers: { 'Content-Type': 'application/json', }
+    };
+    return this.http.post(AppConstants.baseLogin, JSON.stringify(usuario), (options))
+      .subscribe(
+        data => {
+          /*Retorno Http*/
+          var token = JSON.parse(JSON.stringify(data)).token;
+          var idUsuario = JSON.parse(JSON.stringify(data)).idUsuario;
+          
+          
+          localStorage.setItem("token", token);
+          localStorage.setItem("idUsuario",idUsuario);
+          
+          this.router.navigate(['/administrador']); 
+        
+          console.info(token)
+          console.info(idUsuario)
+
         }
       ),
       catchError((e) => this.errorHandler(e))

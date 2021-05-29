@@ -69,7 +69,15 @@
             border-radius: 100px;
             outline: none;
             width: 250px;
+        
+             
         }
     }
 }
  
+
+
+:disabled {
+
+    background: red;
+  }
