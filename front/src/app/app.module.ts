@@ -75,6 +75,8 @@ import { administradorCrudComponent } from "./views/administrador-crud/administr
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 
+import { NgxPaginationModule } from 'ngx-pagination'; // Módulo da dependência de paginação
+
 registerLocaleData(localePt);
 
 @NgModule({
@@ -141,7 +143,8 @@ registerLocaleData(localePt);
     MatPaginatorModule,
     MatSortModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    NgxPaginationModule
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
