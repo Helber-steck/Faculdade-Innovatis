@@ -12,9 +12,11 @@ import { map, catchError } from "rxjs/operators";
 
 export class LoginServiceService {
 
-  constructor(private http: HttpClient, private snackBar: MatSnackBar,  private router: Router) { }
-
-  usuario = { login: '', senha: '' };
+  constructor(
+    private http: HttpClient, 
+    private snackBar: MatSnackBar,  
+    private router: Router
+  ) { }
 
   login(usuario) {
     const options = {
@@ -38,9 +40,10 @@ export class LoginServiceService {
           console.info(token)
           console.info(idUsuario)
 
-        }
-      ),
-      catchError((e) => this.errorHandler(e))
+        },
+        catchError((error) => this.errorHandler(error))
+       
+      )
   }
 
   adm(usuario) {
@@ -64,8 +67,7 @@ export class LoginServiceService {
           console.info(idUsuario)
 
         }
-      ),
-      catchError((e) => this.errorHandler(e))
+      )
   }
 
   showMessage(msg: string, isError: boolean = false): void {
@@ -77,7 +79,7 @@ export class LoginServiceService {
     });
   }
 
-  errorHandler(e: any): Observable<any> {
+  errorHandler(error: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);
     return EMPTY;
   }

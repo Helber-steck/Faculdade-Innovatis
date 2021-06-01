@@ -14,7 +14,7 @@
     }
     .box-right{
         background: white;
-        padding: 50px 70px;
+        padding: 50px 70px 95px 70px;
         width: 603px;
         margin: 0 auto;
         @media(min-width: 0px) and (max-width: 767px) {
@@ -62,13 +62,13 @@
             text-align: center;
             margin: 0 auto;
             display: block;
-            border: 1px solid #0a182f;
             color: white;
-            background: #0a182f;
-            padding: 12px 55px;
+            padding: 4px 55px;
             border-radius: 100px;
             outline: none;
-            width: 250px;
+            width: 188px;
+            float: left;
+            margin-right: 15px;
         
              
         }

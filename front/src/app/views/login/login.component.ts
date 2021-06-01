@@ -4,6 +4,8 @@ import { HttpClient } from "@angular/common/http";
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { MatSnackBar } from "@angular/material/snack-bar";
+
 
 @Component({
   selector: 'app-login',
@@ -17,13 +19,10 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginServiceService, 
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private snackBar: MatSnackBar,
   ) { }
-
-
-
-
-
+ 
   ngOnInit() {
   }
 
@@ -34,8 +33,17 @@ export class LoginComponent implements OnInit {
   adm(): void {
     if(this.usuario.login == "adm" && this.usuario.senha == "adm") this.loginService.adm(this.usuario);
     else{
-      console.log("erro")
+      this.loginService.showMessage('Login ou senha incorretos!', true)
     }
+  }
+
+  showMessage(msg: string, isError: boolean = false): void {
+    this.snackBar.open(msg, "X", {
+      duration: 3000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: isError ? ["msg-error"] : ["msg-success"],
+    });
   }
  
  
