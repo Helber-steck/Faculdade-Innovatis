@@ -25,20 +25,21 @@
                 <input matInput placeholder="tipo_movimentacao" [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao">
             </mat-form-field> -->
 
-             <mat-form-field>
+             <!-- <mat-form-field>
                 <mat-label>ID usuario</mat-label>
                 <mat-select [(ngModel)]="movimentacao.id_usuario" name="id_usuario" required>
                     <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.id_usuario">
                         {{ movimentacoes.id_usuario }}
                     </mat-option>
                 </mat-select>
-            </mat-form-field>  
+            </mat-form-field>   -->
 
 
 
-            <!-- esse aquiii <mat-form-field>
+            esse aquiii 
+            <mat-form-field>
                 <input matInput [value]="loginUsuario" placeholder="id_usuario" name="id_usuario" disabled>
-            </mat-form-field> -->
+            </mat-form-field>
           
 
             <!-- <mat-form-field>
@@ -47,24 +48,23 @@
 
             <mat-form-field>
                 <mat-label>ID produto</mat-label>
-
-                <mat-select [(ngModel)]="movimentacao.id_produto" name="id_produto" required> 
+                <mat-select [(ngModel)]="movimentacao.id_produto" name="nome_produto" required> 
                     <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.id_produto">
-                        {{ movimentacoes.id_produto }}
+                        <!-- {{ movimentacoes.id_produto }} -->
+                        {{ movimentacoes.nome_produto }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
 
 
-            <mat-form-field>
+            <!-- <mat-form-field>
                 <mat-label>nome produto</mat-label>
-
                 <mat-select [(ngModel)]="movimentacao.nome_produto" name="nome_produto" required> 
                     <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.nome_produto">
                         {{ movimentacoes.nome_produto }}
                     </mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field> -->
 
             <!-- <mat-form-field>
                 <input matInput placeholder="id_produto" [(ngModel)]="movimentacao.id_produto" name="id_produto">

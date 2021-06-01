@@ -1,6 +1,6 @@
 export interface movimentacao {
     id_produto?: number,
-    id_usuario?: number,
+    id_usuario?: any,
     idmovimentacao?: number, //id
     data_hora: number,
     login_usuario: string,

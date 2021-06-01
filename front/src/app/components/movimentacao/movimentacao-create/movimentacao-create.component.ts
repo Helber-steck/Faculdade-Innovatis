@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./movimentacao-create.component.css']
 })
 
-
 export class movimentacaoCreateComponent implements OnInit {
   
   @Input() loginUsuario: any
@@ -21,7 +20,7 @@ export class movimentacaoCreateComponent implements OnInit {
   movimentacao: movimentacao = {
     quantidade: null,
     tipo_movimentacao: '', 
-    id_usuario: null,
+    id_usuario: window.localStorage.getItem('idUsuario'),
     id_produto: null,
     idmovimentacao: null, 
     data_hora: null,

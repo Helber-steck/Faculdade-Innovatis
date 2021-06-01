@@ -1,10 +1,10 @@
-import { HttpClient, } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConstants } from 'src/app/app-constants';
 import { Router } from '@angular/router';
 import { Observable, EMPTY } from "rxjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { map, catchError } from "rxjs/operators";
+import { map, catchError, tap } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,8 @@ import { map, catchError } from "rxjs/operators";
 export class LoginServiceService {
 
   constructor(
-    private http: HttpClient, 
-    private snackBar: MatSnackBar,  
+    private http: HttpClient,
+    private snackBar: MatSnackBar,
     private router: Router
   ) { }
 
@@ -23,27 +23,28 @@ export class LoginServiceService {
       headers: { 'Content-Type': 'application/json', }
     };
     return this.http.post(AppConstants.baseLogin, JSON.stringify(usuario), (options))
+      // .pipe(
+      //   catchError()
+      // )
       .subscribe(
         data => {
           /*Retorno Http*/
           var token = JSON.parse(JSON.stringify(data)).token;
           var idUsuario = JSON.parse(JSON.stringify(data)).idUsuario;
-          
-          
+
+
           localStorage.setItem("token", token);
-          localStorage.setItem("idUsuario",idUsuario);
-          
-          this.router.navigate(['/home']); 
-          
-          
-          
+          localStorage.setItem("idUsuario", idUsuario);
+
+          this.router.navigate(['/home']);
+
           console.info(token)
           console.info(idUsuario)
-
         },
-        catchError((error) => this.errorHandler(error))
-       
       )
+
+      
+     
   }
 
   adm(usuario) {
@@ -56,13 +57,13 @@ export class LoginServiceService {
           /*Retorno Http*/
           var token = JSON.parse(JSON.stringify(data)).token;
           var idUsuario = JSON.parse(JSON.stringify(data)).idUsuario;
-          
-          
+
+
           localStorage.setItem("token", token);
-          localStorage.setItem("idUsuario",idUsuario);
-          
-          this.router.navigate(['/administrador']); 
-        
+          localStorage.setItem("idUsuario", idUsuario);
+
+          this.router.navigate(['/administrador']);
+
           console.info(token)
           console.info(idUsuario)
 
@@ -83,5 +84,5 @@ export class LoginServiceService {
     this.showMessage("Ocorreu um erro!", true);
     return EMPTY;
   }
-  
+
 }

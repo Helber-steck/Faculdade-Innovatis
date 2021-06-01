@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.loginService.login(this.usuario); 
+    this.loginService.login(this.usuario) 
   }
 
   adm(): void {
