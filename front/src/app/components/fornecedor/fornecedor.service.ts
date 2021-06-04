@@ -16,7 +16,7 @@ export class fornecedorService {
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
-      duration: 3000,
+      duration: 5000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
@@ -26,7 +26,7 @@ export class fornecedorService {
   create(fornecedor: fornecedor): Observable<fornecedor> {
     return this.http.post(`${this.baseUrl}/novo`, fornecedor).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorDuplicidade(e))
     );
   }
 
@@ -49,7 +49,7 @@ export class fornecedorService {
     const url = `${this.baseUrl}/${fornecedor.idfornecedor}`;
     return this.http.put<fornecedor>(url, fornecedor).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorDuplicidade(e))
     );
   }
 
@@ -57,12 +57,22 @@ export class fornecedorService {
     const url = `${this.baseUrl}/${idfornecedor}`;
     return this.http.delete<fornecedor>(url).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorMovimentado(e))
     );
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Fornecedor já existe ou fornecedor com produto já cadastrado", true);
+    this.showMessage("Ocorreu um erro!", true);
+    return EMPTY;
+  }
+
+  errorDuplicidade(e: any): Observable<any> {
+    this.showMessage("Fornecedor já existente!", true);
+    return EMPTY;
+  }
+
+  errorMovimentado(e: any): Observable<any> {
+    this.showMessage("Não é possível excluir um fornecedor com produto já cadastrado!", true);
     return EMPTY;
   }
 }

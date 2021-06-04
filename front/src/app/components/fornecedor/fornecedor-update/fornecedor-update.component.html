@@ -11,7 +11,7 @@
     <form #clienteForm="ngForm">
 
         <mat-form-field>
-            <input matInput placeholder="cnpj" [(ngModel)]="fornecedor.cnpj" name="cnpj" required>
+            <input matInput placeholder="CNPJ" mask="00.000.000/0000-00" [(ngModel)]="fornecedor.cnpj" name="cnpj" required>
         </mat-form-field>
 
         <mat-form-field>

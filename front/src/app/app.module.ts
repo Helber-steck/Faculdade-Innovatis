@@ -77,7 +77,11 @@ import { MatRadioModule } from '@angular/material/radio';
 
 import { NgxPaginationModule } from 'ngx-pagination'; // Módulo da dependência de paginação
 
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
 registerLocaleData(localePt);
+
+ 
 
 @NgModule({
   declarations: [
@@ -144,7 +148,8 @@ registerLocaleData(localePt);
     MatSortModule,
     MatSelectModule,
     MatRadioModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxMaskModule.forRoot(),
     ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
@@ -154,3 +159,5 @@ registerLocaleData(localePt);
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;

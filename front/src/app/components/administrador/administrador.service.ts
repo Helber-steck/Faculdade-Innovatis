@@ -17,7 +17,7 @@ export class administradoService {
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
-      duration: 3000,
+      duration: 5000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
@@ -27,7 +27,7 @@ export class administradoService {
   create(administrador: administrador): Observable<administrador> {
     return this.http.post(`${this.baseUrl}/novo`, administrador).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorDuplicidade(e))
     );
   }
 
@@ -50,7 +50,7 @@ export class administradoService {
     const url = `${this.baseUrl}/${administrador.idusuario}`;
     return this.http.put<administrador>(url, administrador).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorDuplicidade(e))
     );
   }
 
@@ -58,12 +58,22 @@ export class administradoService {
     const url = `${this.baseUrl}/${idusuario}`;
     return this.http.delete<administrador>(url).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorMovimentado(e))
     );
   }
 
   errorHandler(e: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);
+    return EMPTY;
+  }
+
+  errorDuplicidade(e: any): Observable<any> {
+    this.showMessage("administrador já existente!", true);
+    return EMPTY;
+  }
+
+  errorMovimentado(e: any): Observable<any> {
+    this.showMessage("N\u00e3o \u00e9 poss\u00edvel excluir um usu\u00e1rio que j\u00e1 lan\u00e7ou movimenta\u00e7\u00e3o!", true);
     return EMPTY;
   }
 }

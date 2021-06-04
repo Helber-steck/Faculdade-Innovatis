@@ -10,8 +10,10 @@
         <form #clienteForm="ngForm">
 
             <mat-form-field>
-                <input matInput placeholder="quantidade" [(ngModel)]="movimentacao.quantidade" name="quantidade" required>
+                <input matInput placeholder="quantidade" type="text" mask="separator.2" separatorLimit="10000" thousandSeparator="." [(ngModel)]="movimentacao.quantidade" name="quantidade" required>
             </mat-form-field>
+
+   
 
             <label>Tipo movimentações</label>
             <br>
@@ -47,7 +49,7 @@
             </mat-form-field> -->
 
             <mat-form-field>
-                <mat-label>ID produto</mat-label>
+                <mat-label>nome produto</mat-label>
                 <mat-select [(ngModel)]="movimentacao.id_produto" name="nome_produto" required> 
                     <mat-option *ngFor="let movimentacoes of movimentacoes" [value]="movimentacoes.id_produto">
                         <!-- {{ movimentacoes.id_produto }} -->

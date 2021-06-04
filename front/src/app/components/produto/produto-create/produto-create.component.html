@@ -18,6 +18,8 @@
                 </mat-select>
             </mat-form-field>  
 
+            
+
             <!-- <mat-form-field>
                 <input matInput placeholder="id_categoria" [(ngModel)]="produto.id_categoria" name="id_categoria" required>
             </mat-form-field> -->
@@ -46,7 +48,7 @@
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="quantidade" [(ngModel)]="produto.quantidade" name="quantidade" required>
+                <input matInput placeholder="quantidade" type="text" mask="separator.2" separatorLimit="10000" thousandSeparator="." [(ngModel)]="produto.quantidade" name="quantidade" required>
             </mat-form-field>
 
             <!-- <mat-form-field>

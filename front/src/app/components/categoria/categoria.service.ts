@@ -17,7 +17,7 @@ export class categoriaService {
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
-      duration: 3000,
+      duration: 5000,
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
@@ -27,7 +27,7 @@ export class categoriaService {
   create(categoria: categoria): Observable<categoria> {
     return this.http.post(`${this.baseUrl}/novo`, categoria).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorDuplicidade(e))
     );
   }
 
@@ -50,7 +50,7 @@ export class categoriaService {
     const url = `${this.baseUrl}/${categoria.idcategoria}`;
     return this.http.put<categoria>(url, categoria).pipe(
       map((obj) => obj),
-      catchError((e) => this.errorHandler(e))
+      catchError((e) => this.errorDuplicidade(e))
     );
   }
 
@@ -63,7 +63,12 @@ export class categoriaService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Ocorreu um erro!", true);
+    this.showMessage("N\u00e3o \u00e9 poss\u00edvel excluir uma categoria com produto j\u00e1 cadastrado!", true);
+    return EMPTY;
+  }
+
+  errorDuplicidade(e: any): Observable<any> {
+    this.showMessage("Categoria já existente!", true);
     return EMPTY;
   }
 }

@@ -25,7 +25,7 @@
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="quantidade" [value]="produto?.quantidade" name="quantidade" disabled>
+                <input matInput placeholder="quantidade" type="text" mask="separator.2" separatorLimit="10000" thousandSeparator="." [value]="produto?.quantidade" name="quantidade" disabled>
             </mat-form-field>
 
             <mat-form-field>

@@ -16,7 +16,7 @@ export class ProdutoService {
 
     showMessage(msg: string, isError: boolean = false) {
         this.snackBar.open(msg, 'x', {
-            duration: 3000,
+            duration: 5000,
             horizontalPosition: "right",
             verticalPosition: "top",
             panelClass: isError ? ['msg-error'] : ['msg-success']
@@ -33,7 +33,7 @@ export class ProdutoService {
     create(produto: Produto): Observable<Produto> {
         return this.http.post(`${this.baseUrl}/novo`, produto).pipe(
             map((obj) => obj),
-            catchError((e) => this.errorHandler(e))
+            catchError((e) => this.errorDuplicidade(e))
         );
     }
 
@@ -57,7 +57,7 @@ export class ProdutoService {
         const url = `${this.baseUrl}/${produto.idproduto}`;
         return this.http.put<Produto>(url, produto).pipe(
             map((obj) => obj),
-            catchError((e) => this.errorHandler(e))
+            catchError((e) => this.errorDuplicidade(e))
         );
     }
 
@@ -65,13 +65,25 @@ export class ProdutoService {
         const url = `${this.baseUrl}/${idproduto}`;
         return this.http.delete<Produto>(url).pipe(
             map((obj) => obj),
-            catchError((e) => this.errorHandler(e))
+            catchError((e) => this.errorMovimentado(e))
         );
     }
     
 
+   
+
     errorHandler(e: any): Observable<any> {
-        this.showMessage('Ocorreu um erro', true);
+        this.showMessage("Ocorreu um erro!", true);
         return EMPTY;
-    }
+      }
+    
+      errorDuplicidade(e: any): Observable<any> {
+        this.showMessage("Produto já existente!", true);
+        return EMPTY;
+      }
+    
+      errorMovimentado(e: any): Observable<any> {
+        this.showMessage("N\u00e3o \u00e9 poss\u00edvel excluir um produto com movimenta\u00e7\u00e3o j\u00e1 cadastrada!", true);
+        return EMPTY;
+      }
 }
