@@ -10,34 +10,11 @@
     
     <form #clienteForm="ngForm">
 
-        <!-- 
         <mat-form-field>
-            <input matInput placeholder="id_categoria" [(ngModel)]="produto.id_categoria" name="id_categoria">
-        </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="id_fornecedor" [(ngModel)]="produto.id_fornecedor" name="id_fornecedor">
-        </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="idproduto" [(ngModel)]="produto.idproduto" name="idproduto">
-        </mat-form-field> 
-        -->
-
-        <mat-form-field>
-            <input matInput placeholder="nome_produto" [(ngModel)]="produto.nome_produto" name="nome_produto" required>
+            <input matInput placeholder="Nome do produto" [(ngModel)]="produto.nome_produto" name="nome_produto" required>
         </mat-form-field>
         
-
-        <!-- <mat-form-field>
-            <input matInput placeholder="quantidade" type="text" mask="separator.2" separatorLimit="10000" thousandSeparator="." [(ngModel)]="produto.quantidade" name="quantidade" required>
-        </mat-form-field> -->
-
-        <!-- <mat-form-field>
-            <input matInput placeholder="status_produto" [(ngModel)]="produto.status_produto" name="status_produto" required>
-        </mat-form-field> -->
-
-        <label>Status produto</label>
+        <label>Status do produto</label>
             <br>
             <mat-radio-group [(ngModel)]="produto.status_produto" name="status_produto" required>
                 <mat-radio-button class="radio" value="ATIVO">ATIVO</mat-radio-button>

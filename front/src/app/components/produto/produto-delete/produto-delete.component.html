@@ -8,28 +8,16 @@
         <mat-card-title>Excluir</mat-card-title>
         
         <form>
-            <!-- <mat-form-field>
-                <input matInput placeholder="id_categoria" [value]="produto?.id_categoria" name="id_categoria" disabled>
+            <mat-form-field>
+                <input matInput placeholder="Nome do produto" [value]="produto?.nome_produto" name="nome_produto" disabled>
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="id_fornecedor" [value]="produto?.id_fornecedor" name="id_fornecedor" disabled>
+                <input matInput placeholder="Quantidade" type="text" mask="separator.2" separatorLimit="10000" thousandSeparator="." [value]="produto?.quantidade" name="quantidade" disabled>
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="idproduto" [value]="produto?.idproduto" name="idproduto" disabled>
-            </mat-form-field> -->
-
-            <mat-form-field>
-                <input matInput placeholder="nome_produto" [value]="produto?.nome_produto" name="nome_produto" disabled>
-            </mat-form-field>
-
-            <mat-form-field>
-                <input matInput placeholder="quantidade" type="text" mask="separator.2" separatorLimit="10000" thousandSeparator="." [value]="produto?.quantidade" name="quantidade" disabled>
-            </mat-form-field>
-
-            <mat-form-field>
-                <input matInput placeholder="status_produto" [value]="produto?.status_produto" name="status_produto" disabled>
+                <input matInput placeholder="Status do produto" [value]="produto?.status_produto" name="status_produto" disabled>
             </mat-form-field>
         </form>
 

@@ -31,7 +31,6 @@ export class movimentacaoService {
       catchError((e) => this.errorHandler(e))
     );
   }
-
  
   create(movimentacao: movimentacao): Observable<movimentacao> {
     return this.http.post(`${this.baseUrl2}/novo`, movimentacao).pipe(
@@ -56,7 +55,7 @@ export class movimentacaoService {
   }
 
   errorHandler(e: any): Observable<any> {
-    this.showMessage("Ocorreu um erro!", true);
+    this.showMessage("Digite uma quantidade válida!!!", true);
     return EMPTY;
   }
 }

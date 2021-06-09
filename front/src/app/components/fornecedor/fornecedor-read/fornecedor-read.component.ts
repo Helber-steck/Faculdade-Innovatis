@@ -10,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class fornecedorReadComponent implements OnInit {
 
   fornecedors: fornecedor[]
-  displayedColumns = ['idfornecedor', 'razao_social', 'cnpj', 'action']
+  displayedColumns = [
+    // 'idfornecedor', 
+    'razao_social', 
+    'cnpj', 
+    'action'
+  ]
   
   constructor(private fornecedorService: fornecedorService) { }
 

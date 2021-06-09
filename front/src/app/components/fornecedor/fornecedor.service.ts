@@ -23,6 +23,13 @@ export class fornecedorService {
     });
   }
 
+  teste(): Observable<fornecedor> {
+    return this.http.get<fornecedor>(this.baseUrl).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
   create(fornecedor: fornecedor): Observable<fornecedor> {
     return this.http.post(`${this.baseUrl}/novo`, fornecedor).pipe(
       map((obj) => obj),
