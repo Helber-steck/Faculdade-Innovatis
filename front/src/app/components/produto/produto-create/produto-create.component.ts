@@ -22,13 +22,11 @@ export class ProdutoCreateComponent implements OnInit {
     razao_social: '', //name
     cnpj: null
   }
-
   fornecedors: fornecedor
 
   categoria: categoria = {
     nome_categoria: ''
   }
-
   categorias: categoria
 
   @Input() loginUsuario: any
@@ -69,8 +67,7 @@ export class ProdutoCreateComponent implements OnInit {
   }
 
   createProduto(): void {
-    this.produtoService.create(this.produto)
-    .subscribe(data => {
+    this.produtoService.create(this.produto) .subscribe(data => {
       this.produtoService.showMessage('criado!')
       this.router.navigate(['/produtos'])
     })

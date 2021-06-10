@@ -19,14 +19,16 @@ export class ProdutoReadComponent implements OnInit {
   produtos: Produto[]
 
   displayedColumns = [
- 
-
-    'id_categoria', 
-    'id_fornecedor', 
     'idproduto', 
     'nome_produto',
     'quantidade',
     'status_produto',
+    
+    'id_categoria',
+    'id_fornecedor',
+    
+    'categoria',
+    'fornecedor',
     'action',
   ]
 

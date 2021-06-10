@@ -1,16 +1,39 @@
 import { movimentacaoService } from './../movimentacao.service';
 import { movimentacao } from './../movimentacao.model';
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProdutoService } from './../../produto/produto.service';
 import { Produto } from './../../produto/produto.model';
+// import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-movimentacao-read',
   templateUrl: './movimentacao-read.component.html',
   styleUrls: ['./movimentacao-read.component.css']
 })
+
 export class movimentacaoReadComponent implements OnInit {
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   produtos: Produto[]
 

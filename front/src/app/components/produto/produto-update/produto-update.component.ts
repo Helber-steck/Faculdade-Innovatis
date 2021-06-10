@@ -20,6 +20,8 @@ export class ProdutoUpdateComponent implements OnInit {
     status_produto: ""
   };
 
+  produtos: Produto
+
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
